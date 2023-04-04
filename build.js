@@ -11,7 +11,7 @@ const EXPORT_DATABASE = './view/src/assets/database.json'
 *   1. Get build dependencies
 *   2. Copy all the blogs into /view/public/blogs
 *   3. Make a JSON db from the blogs
-*   4. Export the db into /view/public/flexsearch
+*   4. Export the db into view/src/assets/database.json
 *   5. Build the blog
 */
 
@@ -53,20 +53,18 @@ for (let i=0; i<files.length; i++){
         const edited  = execSync(`git log -1 --pretty="format:%ci" '${currentFile}'`).toString()
         const createdFomratted = created ? moment(edited).format("LT MM/DD/YYYY") : ''
         const editedFomratted  = created ? moment(edited).format("LT MM/DD/YYYY") : ''
-        const url              = currentFile.replace('.','')
         const image            = currentFile.replace(/[^/]*$/,'').replace('.','') + "index.jpg"
         content                = content.split('\n'); content.shift(); content.shift(); 
         content                = content.join('\n')
         db.push({
-            id          : `project-${i}`,
-            created     : createdFomratted,
-            updated     : editedFomratted,
-            title       : title,
-            description : description,
-            content     : content,
-            tags        : tags,
-            url         : url,
-            image       : image
+            id          : `project-${i}`,   // #TODO come up with reliable website link  
+            created     : createdFomratted, // Formatted created date
+            updated     : editedFomratted,  // Formatted updated date
+            title       : title,            // First line of readme
+            description : description,      // Second line of readme
+            content     : content,          // readme - first 2 lines
+            tags        : tags,             // Any #tag's 
+            image       : image             // project logo - currently always /project/index.jpg
         })
     }
 }

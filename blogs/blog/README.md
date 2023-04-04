@@ -11,3 +11,13 @@ Heres what it looked like
 <p align="center">
     <img src="/blogs/blog/planning.jpg" width="75%"/>
 </p>
+
+```javascript
+const fs = require('fs')
+const showdown  = require('showdown')
+const converter = new showdown.Converter()
+let   markdown  = fs.readFileSync('./example.md', "utf8")
+let   html      = converter.makeHtml(markdown)
+
+fs.writeFileSync('./index2.html',html)
+```

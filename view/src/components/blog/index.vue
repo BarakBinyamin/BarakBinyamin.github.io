@@ -1,13 +1,15 @@
 <template>
-    <div class="article">
-       <router-link to="/" class="back"> ← To Project Explorer (Backspace)</router-link>
-       <div class="title"  >{{  item?.title  }}</div>
-       <div class="description" >{{item?.description   }}</div>
-       <div class="created">Created {{  item?.created   }}</div>
-       <div class="updated">Last Updated {{  item?.updated   }}</div>
-       <br>
-       <markdown :markdownContent="item.content"/>
-    </div>
+   <div class="blog">
+      <div class="article">
+         <router-link to="/" class="back"> ← To Project Explorer (Backspace)</router-link>
+         <div class="title"  >{{  blog?.title  }}</div>
+         <div class="description" >{{blog?.description   }}</div>
+         <div class="created">Created {{  blog?.created   }}</div>
+         <div class="updated">Last Updated {{  blog?.updated   }}</div>
+         <br>
+         <markdown :markdownContent="blog.content"/>
+      </div>
+   </div>
  </template>
  
  <script>
@@ -19,15 +21,15 @@ import markdown from './viewMarkdown.vue'
     data(){
        return{
           eventListener : "",
-          item: "",
-          foo: ""
+          blog: "",
        }
     },
     beforeMount(){
       this.addListener()
-      this.item = this.$fuse.value.search({
-         $and:[{id : this.id}]
-      }).filter(item => item.item.id===this.id)?.[0]?.item
+      // Filter database for matching blog id
+      this.blog = this.$fuse.value.search(
+         {$and:[{id : this.id}]}
+      ).filter(item => item.item.id===this.id)?.[0]?.item
     },
     methods: {
       handleEvent(event){
@@ -44,6 +46,12 @@ import markdown from './viewMarkdown.vue'
  </script>
  
  <style scoped>
+ .blog{
+   width: 100%;
+   display: grid;
+   justify-content: center;
+   
+ }
  .back{
    color: black;
  }
@@ -58,9 +66,15 @@ import markdown from './viewMarkdown.vue'
    overflow: hidden;
    padding: 10px;
    overflow-x: hidden;
+   max-width: 900px;
+   align-self: center;
+   padding-right: auto;
+   padding-left: auto;
  }
  .title{
     font-size: 3em;
+    padding: 0px;
+    margin: 0px;
  }
  .description{
    font-size: 1.5em;
@@ -68,7 +82,7 @@ import markdown from './viewMarkdown.vue'
  }
 
  .created, .updated{
-   color: grey;
+    color: grey;
    font-size: .8em;
    display: inline-block;
    padding: 5px;

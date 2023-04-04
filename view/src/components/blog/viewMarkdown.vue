@@ -78,6 +78,17 @@ pre{
   font-size: .8em !important;
 }
 
+@media (any-pointer: coarse)  {
+  pre{
+    position: relative;
+    border-radius: 5px;
+    overflow-x: scroll;
+    margin: 10px 10px 10px 10px !important;
+    padding: 1em !important;
+    font-size: .7em !important;
+  }
+}
+
 code{
   height: min-content !important;
   padding: 0px !important;
