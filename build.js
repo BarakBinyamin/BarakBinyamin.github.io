@@ -6,7 +6,7 @@ const {execSync}   = require('node:child_process')
 const BLOG_DIRECTORY  = './blogs'
 const EXPORT_BLOGS    = './view/public/blogs'
 const EXPORT_DATABASE = './view/src/assets/database.json'
-const VIEW_INDEX_HTML = './view/index.html'
+const VIEW_INDEX_HTML = './docs/index.html'
 const SPA_404_HTML    = './docs/404.html'
 
 /*  
