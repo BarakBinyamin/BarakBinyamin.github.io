@@ -1,15 +1,21 @@
-# BarakBinyamin.github.io
-[My Resume](https://barakbinyamin.github.io/)  
-[Firebase text Demo](https://barakbinyamin.github.io/Firebase-Database-Demo/demo.html)  
-[Firebase image Demo](https://barakbinyamin.github.io/image-database/image_demo.html)  
-[Emscripton test, C++ to web-assembly](https://barakbinyamin.github.io/emscripton/test.html)  
-[Exploration into the Tile](https://barakbinyamin.github.io/TileTesting/post.html)  
-[Auto download](https://barakbinyamin.github.io/magic_click.html)  
-[Web-dev physics](https://barakbinyamin.github.io/Squares.html)  
-[Nutrient](https://barakbinyamin.github.io/nutrient/signUp.html)  
-[FunStuff](https://barakbinyamin.github.io/funstuff/funstuff.html)  
-[Bin shortcut](https://barakbinyamin.github.io/BinShortcut/BinShortcut.html)  
-[Touchtype](https://barakbinyamin.github.io/Touchtype)  
-## Scripts
+# Blog
+Blog form of my projects with a cool UI
 
-[View EmailListFilter.sh](https://raw.githubusercontent.com/BarakBinyamin/BarakBinyamin.github.io/master/Scripts/EmailListFilter.sh) or [Download EmailListFilter.sh](https://barakbinyamin.github.io/Scripts/EmailListFilter.sh)
+### Flow for how to update the blog
+1. Add a md blog to the blogs folder
+2. Run build
+3. Push to repo
+
+## Project Directory
+| Name                                   | Purpose                                       | 
+| :--                                    | :--                                           |
+|[blogs](blogs)                          | Most of the functionality behind this project |
+|[docs](docs)                            | Where github serves the website from          |
+|[misc](mic)                             | Retired resume wesbite, blogs, and scripts    |
+|[view](view)                            | Where the UI is developed                     |   
+|[build.js](build.js)                    | Used to build the website when updated        |
+|[package.json](build.js)                | Nodejs project metadata file                  |
+
+# Resources
+- [Use git to find timestamps](https://stackoverflow.com/questions/2390199/finding-the-date-time-a-file-was-first-added-to-a-git-repository)
+- [dynamic spa routing for github pages](https://huishun.medium.com/how-to-deploy-a-vue-js-application-with-dynamic-routing-on-github-pages-3d36f4644e54)
