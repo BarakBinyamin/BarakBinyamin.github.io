@@ -69,6 +69,10 @@ export default{
 </script>
 
 <style>
+#markdown{
+  padding: 5px !important;
+}
+
 pre{
   position: relative;
   border-radius: 5px;

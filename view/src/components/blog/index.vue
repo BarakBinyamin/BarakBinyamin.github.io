@@ -10,6 +10,7 @@
          <markdown :markdownContent="blog.content"/>
       </div>
    </div>
+   <div class="space"></div>
  </template>
  
  <script>
@@ -86,5 +87,8 @@ import markdown from './viewMarkdown.vue'
    font-size: .8em;
    display: inline-block;
    padding: 5px;
+ }
+ .space{
+   height: 100px;
  }
  </style>
