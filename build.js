@@ -6,6 +6,8 @@ const {execSync}   = require('node:child_process')
 const BLOG_DIRECTORY  = './blogs'
 const EXPORT_BLOGS    = './view/public/blogs'
 const EXPORT_DATABASE = './view/src/assets/database.json'
+const VIEW_INDEX_HTML = './view/index.html'
+const SPA_404_HTML    = './docs/404.html'
 
 /*  
 *   1. Get build dependencies
@@ -74,3 +76,4 @@ fs.writeFileSync(EXPORT_DATABASE, JSON.stringify(db))
 
 // 4. Build the blog
 execSync(`cd view && npm run build`,{stdio: 'inherit'})
+fs.cpSync(VIEW_INDEX_HTML, SPA_404_HTML)
