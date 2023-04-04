@@ -4,6 +4,9 @@
          <router-link to="/" class="back"> ← To Project Explorer (Backspace)</router-link>
          <div class="title"  >{{  blog?.title  }}</div>
          <div class="description" >{{blog?.description   }}</div>
+         <!-- <div class="tags" >
+            {{blog?.description}}
+         </div> -->
          <div class="created">Created {{  blog?.created   }}</div>
          <div class="updated">Last Updated {{  blog?.updated   }}</div>
          <br>

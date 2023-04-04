@@ -1,19 +1,21 @@
 <template>
-    <div class="title">Project Explorer</div>
-    <div class="search-container">
-        <searchbar v-model:results="results"/>
-    </div>
-    <div class="results">
-        <div v-for="result,index in results" 
-        class="result"
-        @click="$router.push(`/blog/${result.item.id}`)">
-        <img class="preview" :src="result.item.image"/>
-        <div class="info">
-            <div class="name">{{result.item.title }}</div> 
-            <div class="description">{{result.item.description}}</div> 
+    <div class="homepage">
+        <div class="title">Project Explorer</div>
+        <div class="search-container">
+            <searchbar v-model:results="results"/>
         </div>
-            <!-- {{ index }} -->
-            <!-- https://fusejs.io/api/query.html -->
+        <div class="results">
+            <div v-for="result,index in results" 
+            class="result"
+            @click="$router.push(`/blog/${result.item.id}`)">
+            <img class="preview" :src="result.item.image"/>
+            <div class="info">
+                <div class="name">{{result.item.title }}</div> 
+                <div class="description">{{result.item.description}}</div> 
+            </div>
+                <!-- {{ index }} -->
+                <!-- https://fusejs.io/api/query.html -->
+            </div>
         </div>
     </div>
 </template>
@@ -32,6 +34,10 @@ export default{
 </script>
 
 <style scoped>
+.homepage{
+    /* margin-top: -30px;
+    z-index: 1px; */
+}
 .title{
     font-size: 2em;
     text-align: center;
@@ -40,7 +46,9 @@ export default{
     width: 100%;
     display: grid;
     align-items: center;
+    align-content: center;
     justify-content: center;
+    justify-items: center;
     padding: 5px;
 }
 
