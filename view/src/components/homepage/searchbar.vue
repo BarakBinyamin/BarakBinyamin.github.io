@@ -69,10 +69,18 @@ export default{
 
 <style scoped>
 .searchbar{
-    height: 2em;
-    padding: 10px;
-    width: 225px;
+    height   : 2em;
+    padding  : 10px;
+    width    : 225px;
     font-size: 1em;
+    border   :none;
+    /* border-radius: 5px; */
+    background: inherit;
+    color: black;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+}
+.searchbar:hover{
+    border-bottom: 1px solid rgba(0,0,0.4);
 }
 .shortcut{
     top: 0px;
@@ -99,8 +107,10 @@ export default{
         width: 250px;
         border: none;
     }
-    .searchbar:focus{
-        outline: none;
-    }
+    
+}
+.searchbar:focus{
+    outline: none;
+    border-bottom: 1px solid rgba(0,0,0.4);
 }
 </style>
