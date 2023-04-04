@@ -51,7 +51,7 @@ for (let i=0; i<files.length; i++){
         const tags    = Array.from(content.matchAll(/[#][A-z0-9-]+/g), (m) => m[0])
         const created = execSync(`git log --follow --format=%ad --date default '${currentFile}' | tail -1`).toString().replace(/-.*/,'').replace('\n','')
         const edited  = execSync(`git log -1 --pretty="format:%ci" '${currentFile}'`).toString()
-        const createdFomratted = created ? moment(edited).format("LT MM/DD/YYYY") : ''
+        const createdFomratted = created ? moment(created).format("LT MM/DD/YYYY") : ''
         const editedFomratted  = created ? moment(edited).format("LT MM/DD/YYYY") : ''
         const image            = currentFile.replace(/[^/]*$/,'').replace('.','') + "index.jpg"
         content                = content.split('\n'); content.shift(); content.shift(); 
