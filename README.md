@@ -20,4 +20,5 @@ I use #tag to add tags, these tags can be setup with cool css presets in the vie
 # Resources
 - [Use git to find timestamps](https://stackoverflow.com/questions/2390199/finding-the-date-time-a-file-was-first-added-to-a-git-repository)
 - [dynamic spa routing for github pages](https://huishun.medium.com/how-to-deploy-a-vue-js-application-with-dynamic-routing-on-github-pages-3d36f4644e54)
+- [vite dynamic spa](https://stackoverflow.com/questions/68076527/how-to-set-vite-config-js-base-public-path)
 - [npm run clean](https://stackoverflow.com/questions/42950501/delete-node-modules-folder-recursively-from-a-specified-path-using-command-line)
