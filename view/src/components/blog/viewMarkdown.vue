@@ -25,15 +25,7 @@ export default{
           replace: '<input type="checkbox" style="margin: 0px 0.35em 0.25em; vertical-align: middle;"'
       }]
     }
-    // change font of code blocks
-    // var taskListEnablerExtension2 = function() {
-    //   return [{
-    //       type: 'output',
-    //       regex: /<code?/g,
-    //       replace: '<input type="checkbox" style="margin: 0px 0.35em 0.25em; vertical-align: middle;"'
-    //   }]
-    // }
-    const options     = {tasklists:true, tablesHeaderId: true, openLinksInNewWindow: true, extensions: [taskListEnablerExtension]}
+    const options     = {tasklists:true, tablesHeaderId: true, openLinksInNewWindow: true, extensions: []}
     const converter   = new showdown.Converter(options)
     converter.setFlavor('github')
 
@@ -173,11 +165,27 @@ code{
   }
 }
 
-ol{
-  padding-left: 30px;
+li,ul,li::marker{
+  margin: 0px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  list-style-position: outside;
 }
-li::marker {
-  padding-left: 100px !important;
+
+li{
+  margin-left: 25px !important;
+}
+
+a{
+  color: darkcyan;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover{
+  color: darkblue;
+  text-decoration: underline;
 }
 
 </style>

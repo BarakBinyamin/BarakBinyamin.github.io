@@ -1,5 +1,6 @@
 # Project Specific Build Dependencies
 /view/public/blogs
+/view/src/assets/database.json
 
 # Logs
 logs

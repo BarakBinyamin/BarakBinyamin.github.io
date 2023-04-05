@@ -58,6 +58,7 @@ import markdown from './viewMarkdown.vue'
  }
  .back{
    color: black;
+   text-decoration: underline;
  }
  .back:hover{
    opacity: .8;

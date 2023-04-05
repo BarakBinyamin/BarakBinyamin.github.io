@@ -1,11 +1,13 @@
 # Example
-It's really great to learn javascript! I know right?
+This is an example of a blog
 
-- [ ] Mercury
-- [x] asdasd
-- [ ] asdasd
-- [ ] asdasd
+The first two lines are always removed and used as metadata so the real content starts here
 
+- [ ] heres
+- [x] some
+- [ ] checkmarks
+
+A code snippet:  
 ```javascript
 const variable = "goober"
 const foo      = require('example')
@@ -15,12 +17,7 @@ async function(goober){
 }
 ```
 
-```javascript
-const fs = require('fs')
-const showdown  = require('showdown')
-const converter = new showdown.Converter()
-let   markdown  = fs.readFileSync('./example.md', "utf8")
-let   html      = converter.makeHtml(markdown)
-
-fs.writeFileSync('./index2.html',html)
-```
+- a
+- list 
+- of 
+- stuff
