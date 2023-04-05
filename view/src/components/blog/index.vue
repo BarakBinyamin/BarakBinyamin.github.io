@@ -57,7 +57,7 @@ import markdown from './viewMarkdown.vue'
    
  }
  .back{
-   color: black;
+   color: var(--main-font-color);
    text-decoration: underline;
  }
  .back:hover{
@@ -87,7 +87,7 @@ import markdown from './viewMarkdown.vue'
  }
 
  .created, .updated{
-    color: grey;
+   color: var(--second-font-color);
    font-size: .8em;
    display: inline-block;
    padding: 5px;

@@ -34,22 +34,18 @@ export default{
 </script>
 
 <style scoped>
-.homepage{
-    /* margin-top: -30px;
-    z-index: 1px; */
-}
 .title{
     font-size: 2em;
     text-align: center;
 }
 .search-container{
-    width: 100%;
-    display: grid;
-    align-items: center;
-    align-content: center;
+    width          : 100%;
+    display        : grid;
+    align-items    : center;
+    align-content  : center;
     justify-content: center;
-    justify-items: center;
-    padding: 5px;
+    justify-items  : center;
+    padding        : 5px;
 }
 
 .results{
@@ -72,16 +68,17 @@ export default{
     background: white;
     border-radius: 5px;
     height: 100px;
-    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, .5);
+    box-shadow: 0px 0px 1px 0px var(--shaddow-bg-color);
 }
 .preview{
     height: 100%;
     width: 100%;
     object-fit: stretch;
-    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, .5);
+    box-shadow: 0px 0px 1px 0px var(--shaddow-bg-color);
     text-overflow: ellipsis;
     overflow-y: hidden;
 }
+
 .info{
     height: 100%;
     width: 100%;
@@ -91,8 +88,13 @@ export default{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+@media (any-pointer: coarse)  {
+    .info{
+        padding: .2em .2em .2em .4em;
+    }
+}
 .result:hover{
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .5);
+    box-shadow: 0px 0px 5px 0px var(--shaddow-bg-color);
 }
 .name{
     font-weight: bold;
@@ -102,6 +104,6 @@ export default{
 .description{
     font-size: 1em;
     overflow: hidden;
-    color: rgba(0,0,0,.6)
+    color: var(--second-font-color)
 }
 </style>

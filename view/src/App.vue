@@ -1,15 +1,15 @@
 <template>
   <defaults/>
   <router-view />
-  <navbar/>
+  <bottom/>
 </template>
 
 <script>
 import defaults from './components/defaults.vue'
-import navbar from './components/navbar.vue'
+import bottom from './components/footer.vue'
 
 export default{
-  components: {defaults, navbar}
+  components: {defaults, bottom}
 }
 </script>
 

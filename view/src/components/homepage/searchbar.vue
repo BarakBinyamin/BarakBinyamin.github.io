@@ -69,31 +69,33 @@ export default{
 
 <style scoped>
 .searchbar{
-    height   : 2em;
-    padding  : 10px;
-    width    : 225px;
-    font-size: 1em;
-    border   :none;
+    background   : inherit;
+    border       : none;
+    border-bottom: 1px solid var(--second-font-color);
+    color        : var(--main-font-color);
+    height       : 2em;
+    padding      : 10px;
+    width        : 225px;
+    font-size    : 1em;
+
     /* border-radius: 5px; */
-    background: inherit;
-    color: black;
-    border-bottom: 1px solid rgba(0,0,0,.2);
+    border-radius: 0px;
 }
 .searchbar:hover{
-    border-bottom: 1px solid rgba(0,0,0.4);
+    border-bottom: 1px solid var(--main-font-color);
 }
 .shortcut{
-    top: 0px;
-    right: 0px;
-    background: lightblue;
-    max-width: fit-content;
-    padding: 0px 8px 0px 8px;
-    margin-top: -30px;
-    margin-left: 195px;
+    background   : var(--third-bg-color);
+    top          : 0px;
+    right        : 0px;
+    max-width    : fit-content;
+    padding      : 0px 8px 0px 8px;
+    margin-top   : -30px;
+    margin-left  : 195px;
     border-radius: 5px;
-    font-size: 1em;
-    font-weight: bold;
-    opacity: 0.5;
+    font-size    : 1em;
+    font-weight  : bold;
+    opacity      : 0.5;
 }
 
 /* Remove keyboard hint on mobile */
@@ -103,14 +105,12 @@ export default{
     }
     .searchbar{
         font-size: 1em;
-        padding: 5px;
-        width: 250px;
-        border: none;
-    }
-    
+        padding  : 5px;
+        width    : 250px;
+    } 
 }
 .searchbar:focus{
-    outline: none;
-    border-bottom: 1px solid rgba(0,0,0.4);
+    border-bottom: 1px solid var(--main-font-color);
+    outline      : none;
 }
 </style>

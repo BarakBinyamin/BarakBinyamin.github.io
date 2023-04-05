@@ -177,15 +177,4 @@ li{
   margin-left: 25px !important;
 }
 
-a{
-  color: darkcyan;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-a:hover{
-  color: darkblue;
-  text-decoration: underline;
-}
-
 </style>
