@@ -9,6 +9,26 @@ I use #tag to add tags, these tags can be setup with cool css presets in the vie
 2. Run build
 3. Push to repo
 
+## TODO
+- [ ] Make mainpage a short bio
+    - [ ] list new blogs as links under the bio
+    - [ ] maybe filter by topic/tags
+- [ ] Navbar with projects social media and 
+    - [ ] searchbar -> tranform mainpage into blog search
+- [ ] Move project explorer to another page
+- [ ] Get feedback on UI and color scheme
+- [ ] Add projects
+- [ ] Add tags to make projects cool
+- [ ] Nicer Font & Themes [coolors picker](https://coolors.co/cffcff-aaefdf-ffc09f-4281a4-cb769e)
+- [ ] Make h tags links
+- [ ] Redirect anythingelse to mainpage
+
+# Wishlist
+- [ ] Mainpage is bio, then list of blogs in order of newest to oldest
+- [ ] Blog folders will make main topics/tag
+- [ ] Blogs labeled new if created <20 days ago
+- [ ] Each folder should have a topic icon
+
 ## Project Directory
 | Name                                   | Purpose                                       | 
 | :--                                    | :--                                           |
@@ -18,12 +38,6 @@ I use #tag to add tags, these tags can be setup with cool css presets in the vie
 |[view](view)                            | Where the UI is developed                     |   
 |[build.js](build.js)                    | Used to build the website when updated        |
 |[package.json](build.js)                | Nodejs project metadata file                  |
-
-## TODO
-- Get feedback on UI and color scheme
-- Add projects
-- Add tags
-- Add dark theme
 
 # Resources
 - [Use git to find timestamps](https://stackoverflow.com/questions/2390199/finding-the-date-time-a-file-was-first-added-to-a-git-repository)
