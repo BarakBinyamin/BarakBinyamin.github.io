@@ -1,13 +1,14 @@
 # Rocky.dev
 Here you'll find some posts about cool tech I run into, my favorite music, and some other stuff I like to write down
 
-[Here's the link](BarakBinyamin.github.io/)
+[Here's the link](https://BarakBinyamin.github.io/)
 
--[Description]()
--[Developers info]()
+
+- [Description]()  
+- [Developers info]()  
     - [Project Structure]()
     - [Adding Posts]()
--[Resources]()
+- [Resources]()
 
 # How I add posts
 - Add a folder to view/public/posts
@@ -42,5 +43,5 @@ TBD
 - [ ] add contact info
 - [ ] add search for posts
 - [ ] add general search? - items would need to be tagged with "type"
-
+- [ ] add support for tags, beatifying tags, and tag searches
 

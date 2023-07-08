@@ -141,7 +141,7 @@ export default {
     display: grid;
     /*background: coral;*/
     /*grid-template-columns: repeat(auto-fill, minmax(20px, 200px));*/
-    grid-template-columns: 110px auto  60px 60px 80px;
+    grid-template-columns: 110px auto  60px 60px 85px;
     grid-gap: 10px;
     height: 60px;
     width:100%;
