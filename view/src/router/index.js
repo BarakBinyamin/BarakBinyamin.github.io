@@ -1,8 +1,8 @@
 import { createWebHistory, createRouter } from "vue-router";
-// import PageNotFound from   '../pages/PageNotFound.vue'
-import Homepage from  '../components/homepage/index.vue'
-import Blog     from  '../components/blog/index.vue'
-
+import PageNotFound from   '../pages/PageNotFound.vue'
+import Homepage from  '../pages/homepage/index.vue'
+import Post from  '../pages/posts/index.vue'
+import Contact from  '../pages/contact/index.vue'
 
 /* Define routes and rendering in order of priority */
 const routes = [
@@ -12,16 +12,21 @@ const routes = [
     component: Homepage,
   },
   {  
-    path: '/blog/:id',
+    path: '/posts/:id',
     props: true,
-    name: 'Blog',
-    component: Blog,
+    name: 'postid',
+    component: Post,
   },
-  // { 
-  //   path: '/:pathMatch(.*)*',
-  //   name: 'PageNotFound',
-  //   component: PageNotFound
-  // }
+  {  
+    path: '/contact',
+    name: 'contact',
+    component: Contact,
+  },
+  { 
+    path: '/:pathMatch(.*)*',
+    name: 'PageNotFound',
+    component: PageNotFound
+  }
 ]
 
 const router = createRouter({

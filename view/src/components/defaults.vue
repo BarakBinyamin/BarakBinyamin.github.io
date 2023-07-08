@@ -15,7 +15,18 @@ export default{
 
 <style>
 :root {
-  --main-bg-color    : whitesmoke;  
+  --main-bg-color    : #313134;  
+  --second-bg-color  : #1F2124; 
+  --third-bg-color   : lightblue;
+  --shaddow-bg-color : darkblue; 
+  --main-font-color  : #FFC09F; 
+  --second-font-color: #4281A4; 
+  --link-font-color  : #CB769E;
+  --hover-font-color : #cb769ee6; 
+}
+
+/* :root {
+  --main-bg-color    : whitesmoke; 
   --second-bg-color  : white; 
   --third-bg-color   : lightblue;
   --shaddow-bg-color : rgba(0,0,0,.5); 
@@ -23,7 +34,7 @@ export default{
   --second-font-color: rgba(0,0,0,.5); 
   --link-font-color  : darkblue;
   --hover-font-color : darkcyan;
-}
+} */
 /* :root {
   --main-bg-color    : #CFFCFF;  
   --second-bg-color  : #4281A4; 
@@ -41,7 +52,23 @@ export default{
   margin    : 0;
   padding   : 0;
 }
+html{
+  transition: background-color .4s;
 
+  touch-action: none;
+  -webkit-overflow-scrolling: touch; /* enables “momentum” (smooth) scrolling */
+  scroll-behavior: smooth;
+
+  /* Nice Font */
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* By default text is non selectable */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 body{  
   margin    : 0px;
   padding   : 0;
@@ -53,6 +80,7 @@ body{
   /*Getting the right height for mobile devices: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
   min-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
   min-height: calc(var(--vh, 1vh) * 100);
+  overflow-x: hidden;
 }
 
 html { 
@@ -73,6 +101,7 @@ html {
   /* no zoom */
   touch-action           : pan-x pan-y;
   /* touch-action: none; /* no scroll, no zoom for sure */
+  -ms-overflow-style: none;  /* IE and Edge */
 }
 
 a{
@@ -83,6 +112,6 @@ a{
 
 a:hover{
   color          : var(--hover-font-color);
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 </style>

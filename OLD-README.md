@@ -10,6 +10,7 @@ I use #tag to add tags, these tags can be setup with cool css presets in the vie
 3. Push to repo
 
 ## TODO
+- [ ] Fix code copy
 - [ ] Make mainpage a short bio
     - [ ] list new blogs as links under the bio
     - [ ] maybe filter by topic/tags

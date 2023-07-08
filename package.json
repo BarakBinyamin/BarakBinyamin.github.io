@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.29.4",
-    "vue-router": "^4.1.6"
+    "moment": "^2.29.4"
   }
 }
