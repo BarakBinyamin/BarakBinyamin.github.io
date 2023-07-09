@@ -80,16 +80,20 @@ export default{
 }
 
 .posts .title{
-    font-size:25px;
+    font-size:40px;
+    margin-bottom: 5px;
 }
 
 .posts .description{
     font-size:16px;
+    margin-bottom: 5px;
+    color: var(--third-font-color);
+
 }
 
 .posts .timestamp{
     font-size:12px;
-    color: var(--second-font-color)
+    color: var(--second-font-color);
 }
 
 .post-link{
@@ -98,11 +102,10 @@ export default{
     justify-items: left;
     overflow     : hidden;
     width        : 350px;
-    height       : 75px;
     background   : var(--second-bg-color);
     border-radius: 5px;
     padding      : 5px;
-    color        :  var(--main-font-color);
+    color        : var(--main-font-color);
 }
 
 .post-link:hover{

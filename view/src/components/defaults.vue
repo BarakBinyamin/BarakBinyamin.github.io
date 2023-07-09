@@ -21,6 +21,7 @@ export default{
   --shaddow-bg-color : darkblue; 
   --main-font-color  : #FFC09F; 
   --second-font-color: #4281A4; 
+  --third-font-color : grey;
   --link-font-color  : #CB769E;
   --hover-font-color : #cb769ee6; 
 }
