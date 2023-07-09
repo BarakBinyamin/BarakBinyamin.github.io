@@ -3,30 +3,25 @@ Here you'll find some posts about cool tech I run into, my favorite music, and s
 
 [Here's the link](https://BarakBinyamin.github.io/)
 
-
-- [Description]()  
-- [Developers info]()  
-    - [Project Structure]()
-    - [Adding Posts]()
-- [Resources]()
-
-# How I add posts
+# Plan to add posts using markdown
 - Add a folder to view/public/posts
-- Run build.js
+- `npm run build` from project directory
     - This looks at any changes in posts, updates the posts database which contatins some metadata used by the site to search
     ```json
-    posts = [
+    [
         {
-            "name"       : "postFolderName",
-            "description": "second line of poasts/postFolderName/README.md",
-            "created"    : "taken from file info",
-            "updated"    : "taken from file info"
+            "id"          : "encodeURI(title)",   // #TODO come up with reliab le website link  
+            "created"     : "createdFomratted",   // Formatted created date
+            "updated"     : "editedFomratted",    // Formatted updated date
+            "title"       : "title",              // First line of readme
+            "description" : "description",        // Second line of readme
+            "url"         : "/posts/${postPath.name}/README.md"
         }
     ]
     ```
     - Rebuilds the app into docs folder for github
 
-# How I add a item to the store
+# Plan to add items to the store
 TBD
 
 # TODO
@@ -44,4 +39,9 @@ TBD
 - [ ] add search for posts
 - [ ] add general search? - items would need to be tagged with "type"
 - [ ] add support for tags, beatifying tags, and tag searches
-
+- [ ] add directory
+- [Description]()  
+- [Developers info]()  
+    - [Project Structure]()
+    - [Adding Posts]()
+- [Resources]()

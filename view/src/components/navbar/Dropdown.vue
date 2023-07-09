@@ -2,7 +2,7 @@
 	<transition name="dropdown">
         <div class="contianer" v-if="show && window.width<600">
             <router-link active-class="selected" class="navigation-link" 
-                v-for="link in links" :key="link" :to="link">
+                v-for="link in links" :key="link" :to="`/${link}`">
                 {{link}}
             </router-link>
         </div>

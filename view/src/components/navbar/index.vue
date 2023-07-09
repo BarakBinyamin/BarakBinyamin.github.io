@@ -11,7 +11,7 @@
          
           <router-link 
                 v-for="link in LinksRight" :key="link" 
-                class="navigation-link" :to="link" 
+                class="navigation-link" :to="`/${link}`" 
                 active-class="selected"
             >        
                 {{link}}
@@ -153,7 +153,7 @@ export default {
     padding: 0px 10px 0px 0px; /* Up Right Down Left */
     display: grid;
     /*grid-template-columns: repeat(auto-fill, minmax(20px, 200px));*/
-    grid-template-columns: 100px auto  60px 60px 85px;
+    grid-template-columns: 110px auto  60px 60px 85px;
     grid-gap: 10px;
     height: 60px;
     width:100%;
