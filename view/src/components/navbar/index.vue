@@ -2,6 +2,7 @@
     <div :class="colorScheme">
         <!--Full layout-->
         <div v-if="window.width>=600" class="navbar navbar-full-layout">
+            <!-- <img class="logo2" src="/site-images/logo.png"> -->
             <router-link class=" navigation-link" to="/"> 
                 Rocky.dev
             </router-link>
@@ -103,6 +104,18 @@ export default {
     box-shadow: 0 6px 4px -2px rgba(0,0,0,.2);
 }
 
+.logo2{
+    display: inline-block;
+    margin-left: 10px;
+    height: 25px;
+    width: 25px;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */ 
+    align-self: center; /* vertical center in grid */
+    justify-self: left;/* hrozontal center in grid */
+}
 .logo{
     height: 40px;
     width: 40px;
@@ -139,9 +152,8 @@ export default {
 	margin: 0px 50px 0px 0px;
     padding: 0px 10px 0px 0px; /* Up Right Down Left */
     display: grid;
-    /*background: coral;*/
     /*grid-template-columns: repeat(auto-fill, minmax(20px, 200px));*/
-    grid-template-columns: 110px auto  60px 60px 85px;
+    grid-template-columns: 100px auto  60px 60px 85px;
     grid-gap: 10px;
     height: 60px;
     width:100%;

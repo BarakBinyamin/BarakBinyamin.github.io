@@ -2,13 +2,13 @@
     <div class="blog">
        <div class="article">
           <router-link to="/" class="back"> ← To Project Explorer (Backspace)</router-link>
-          <div class="title"  >{{  blog?.title  }}</div>
-          <div class="description" >{{blog?.description   }}</div>
+          <div class="title"  >{{  postMetadata?.title  }}</div>
+          <div class="description" >{{postMetadata?.description   }}</div>
           <!-- <div class="tags" >
              {{blog?.description}}
           </div> -->
-          <div class="created">Created {{  blog?.created   }}</div>
-          <div class="updated">Last Updated {{  blog?.updated   }}</div>
+          <div class="created">Created {{  postMetadata?.created   }}</div>
+          <div class="updated">Last Updated {{  postMetadata?.updated   }}</div>
           <br>
           <markdown :markdownContent="post"/>
        </div>
@@ -26,17 +26,26 @@
         return{
            eventListener : "",
            post: "",
-           blog:""
+           metadata: {}
         }
      },
      async beforeMount(){
-       this.addListener()
-       // Filter database for matching blog id
-       
-       const post = await (await fetch('/posts/post1/README.md')).text()
-       let path   = post.replaceAll(/src\="/g,`src="/posts/post1/`)
-       console.log(path)
-       this.post = path
+      this.addListener()
+     
+      // 1. Get post database
+      const posts = await (await fetch('/posts/posts.json')).json()
+      // 2. Find the metadata id
+      this.postMetadata = posts.find(item => item.id === this.id)
+      let post = await (await fetch(this.postMetadata.url)).text()
+      // 3. Reformat the image links
+      post = post.replaceAll(
+         /src\="/g,
+         `src="${this.postMetadata.url.replace('/README.md','')}`
+      )
+      // 4. Remove title and descripton from markdown section
+      post               = post.split('\n'); post.shift(); post.shift(); 
+      this.post          = post.join('\n')
+
 
      },
      methods: {

@@ -14,10 +14,11 @@
         </div>
     </div>
     <div id="posts" class="posts">
-        <router-link v-for="i in 20" to="/Posts/aa">
+        <router-link v-for="post in posts" :to="`/Posts/${post.id}`">
             <div class="post-link">
-                <div>title</div>
-                <div>created</div>
+                <div class="title">{{post.title}}</div>
+                <div class="description">{{post.description}}</div>
+                <div class="timestamp">{{post.created}}</div>
             </div>
         </router-link>
     </div>
@@ -29,11 +30,13 @@
 export default{
     data(){
         return {
-            showBackToTop: false
+            showBackToTop: false,
+            posts: []
         }
     },
-    mounted(){
+    async mounted(){
         // window.onscroll = this.scrollFunction
+        this.posts = await (await fetch('/posts/posts.json')).json()
     },
     methods:{
         topFunction() {
@@ -70,11 +73,23 @@ export default{
     width        : 100%;
     justify-items: center;
     justify-content: center;
-
     grid-gap     : 15px;
     margin       : 0px;
     padding      : 0px;
     grid-template-columns: repeat(auto-fit, 350px)
+}
+
+.posts .title{
+    font-size:25px;
+}
+
+.posts .description{
+    font-size:16px;
+}
+
+.posts .timestamp{
+    font-size:12px;
+    color: var(--second-font-color)
 }
 
 .post-link{
