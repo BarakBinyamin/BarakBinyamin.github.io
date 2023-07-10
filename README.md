@@ -39,6 +39,7 @@ TBD
 - [ ] add search for posts
 - [ ] add general search? - items would need to be tagged with "type"
 - [ ] add support for tags, beatifying tags, and tag searches
+- [ ] add support for comments
 - [ ] add directory
 - [Description]()  
 - [Developers info]()  

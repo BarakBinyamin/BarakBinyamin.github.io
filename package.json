@@ -4,7 +4,8 @@
   "description": "Blog form of my projects with cool UI",
   "main": "index.js",
   "scripts": {
-    "build": "node build.js",
+    "dev":"cd view && npm run dev",
+    "build": "node index.js",
     "clean": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
   },
   "author": "",

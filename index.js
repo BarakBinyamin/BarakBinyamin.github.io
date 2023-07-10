@@ -42,7 +42,7 @@ async function createPostsDatabase(){
         const created      = execSync(`git log --diff-filter=A --follow --format=%aI -- '${postPath.path}' | tail -1`).toString().replace('\n','')
         const edited       = execSync(`git log -1 --pretty="format:%aI" '${postPath.path}'`).toString()
         const createdFomratted = created ? moment(created).format("MMMM Do, YYYY") : ''
-        const editedFomratted  = created ? moment(edited).format("MMMM Do, YYYY") : ''
+        const editedFomratted  = edited ? moment(edited).format("MMMM Do, YYYY") : ''
         content                = content.split('\n'); content.shift(); content.shift(); 
         content                = content.join('\n')
         postMetaData.push({
