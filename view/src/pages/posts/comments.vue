@@ -80,6 +80,8 @@ button{
     cursor         : pointer;
     color          : inherit;
     font-family    : inherit;
+    font-size      : 16px;
+
 }
 .button:hover{
     opacity: .8;
@@ -90,8 +92,8 @@ button{
     grid-gap  : 10px;
 }
 .name{
-    color: var(--third-font-color);
-    opacity: .5;
+    color     : var(--third-font-color);
+    opacity   : .5;
     font-size: 16px;
 }
 .timestamp{
@@ -113,7 +115,7 @@ button{
     padding : 5px;
     overflow-x: hidden;
     grid-gap: 10px;
-    width: 50%;
+    width: 75%;
     font-family: inherit;
 }
 .add-name, .add-text{
@@ -124,6 +126,7 @@ button{
     font-family: inherit;
     resize     : vertical;
     border-color: none;
+    font-size: 16px;
 }
 .add-name{
     border-color: none;
@@ -138,5 +141,6 @@ button{
 
 .add-text{
     border: none;
+    height: 110px; 
 }
 </style>
