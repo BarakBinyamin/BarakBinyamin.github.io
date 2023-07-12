@@ -46,3 +46,6 @@ TBD
     - [Project Structure]()
     - [Adding Posts]()
 - [Resources]()
+
+# Resources
+- [This kind of helped, still unsure how stuff is working](https://firebase.google.com/docs/database/web/read-and-write#web-modular-api_1)

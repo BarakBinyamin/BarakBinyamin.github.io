@@ -18,6 +18,7 @@ export default{
   --main-bg-color    : #313134;  
   --second-bg-color  : #1F2124; 
   --third-bg-color   : lightblue;
+  --main-border-color: rgba(128, 128, 128, 0.198);
   --shaddow-bg-color : darkblue; 
   --main-font-color  : #FFC09F; 
   --second-font-color: #4281A4; 

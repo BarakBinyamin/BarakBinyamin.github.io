@@ -1,7 +1,7 @@
 <template>
     <div class="blog">
        <div class="article">
-          <router-link to="/" class="back"> ← To Project Explorer (Backspace)</router-link>
+          <!-- <router-link to="/" class="back"> ← To Project Explorer (Backspace)</router-link> -->
           <div class="title"  >{{  postMetadata?.title  }}</div>
           <div class="description" >{{postMetadata?.description   }}</div>
           <!-- <div class="tags" >
@@ -11,26 +11,33 @@
           <div class="updated">Last Updated {{  postMetadata?.updated   }}</div>
           <br>
           <markdown :markdownContent="post"/>
+
+          <hr>
+          <comments/>
        </div>
+       
+
     </div>
     <div class="space"></div>
   </template>
   
   <script>
  import markdown from './viewMarkdown.vue'
+ import comments from "./comments.vue"
+
   
   export default{
-     components: {markdown},
+     components: {markdown, comments},
      props: ['id'],
      data(){
         return{
            eventListener : "",
            post: "",
-           metadata: {}
+           postMetadata: {}
         }
      },
      async beforeMount(){
-      this.addListener()
+      // this.addListener()
      
       // 1. Get post database
       const posts = await (await fetch('/posts/posts.json')).json()
@@ -63,6 +70,13 @@
   </script>
   
   <style scoped>
+  hr{
+   color: var(--second-font-color);
+   border-color: var(--second-font-color);
+   background: var(--second-font-color);
+   height: 1px;
+   margin: 15px 0px 15px 0px;
+  }
   .blog{
     width: 100%;
     display: grid;
