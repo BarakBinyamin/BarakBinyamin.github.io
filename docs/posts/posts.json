@@ -6,13 +6,5 @@
     "title": "Rocky.dev",
     "description": "How this website came to be",
     "url": "/posts/1/README.md"
-  },
-  {
-    "id": "Rocky.dev2",
-    "created": "May 22nd, 2020",
-    "updated": "July 17th, 2023",
-    "title": "Rocky.dev2",
-    "description": "Here you'll find some posts about cool tech I run into, my favorite music, and some other stuff I like to write down",
-    "url": "/posts/2/README.md"
   }
 ]

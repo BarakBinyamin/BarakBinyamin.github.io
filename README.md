@@ -47,6 +47,9 @@ TBD
     - [Project Structure]()
     - [Adding Posts]()
 - [Resources]()
+- fix sub code button hover and coloring
+- fix image buffer for large images vs inline
+
 
 ## Motivation
 I'm interested in sharing & collecting feedback, so that I may gain the ability to simplify tech talk into normal words
@@ -54,7 +57,7 @@ I'm interested in sharing & collecting feedback, so that I may gain the ability 
 ## Technologies
 - <img text-align="center" src="https://vuejs.org/logo.svg" height="20px"/>  [Vue](https://vuejs.org/) a view-model javascript framework, used to develop the **user interface**
 - <img text-align="center" src="https://vitejs.dev/logo.svg" height="20px"/> [Vite](https://vitejs.dev/) a development, minification & website build tool
-- <img text-align="center" src="https://assets.stickpng.com/images/5847f40ecef1014c0b5e488a.png" height="23px"/> [Firebase](https://firebase.google.com/) a google cloud mobile and web app dev platform with opt in services including hosting and storage, used for it's free tier realtime database to store comments
+- <img text-align="center" src="https://cdn4.iconfinder.com/data/icons/google-i-o-2016/512/google_firebase-2-512.png" height="20px"/> [Firebase](https://firebase.google.com/) a google cloud mobile and web app dev platform with opt in services including hosting and storage, used for it's free tier realtime database to store comments
 - <img text-align="center" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/stripe_logo_icon_167962.png" height="20px"/> [Stripe](https://stripe.com/pricing) a cloud payment processing platform, used to collect payments for items in the store
 
 # Resources
