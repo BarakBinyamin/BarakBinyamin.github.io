@@ -46,7 +46,7 @@
       let post = await (await fetch(this.postMetadata.url)).text()
       // 3. Reformat the image links
       post = post.replaceAll(
-         /src\="/g,
+         /src\="(?!http)/g,
          `src="${this.postMetadata.url.replace('/README.md','')}`
       )
       // 4. Remove title and descripton from markdown section
