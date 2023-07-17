@@ -86,11 +86,10 @@ export default{
   overflow-wrap: break-word;
 }
 
-#markdown img{
+/* #markdown img{
   margin-top: 10px;
   margin-bottom: 10px;
-
-}
+} */
 
 pre{
   position: relative;
