@@ -1,4 +1,4 @@
-# Rocky.dev
+# Rocky.dev2
 Here you'll find some posts about cool tech I run into, my favorite music, and some other stuff I like to write down
 
 [Here's the link](https://BarakBinyamin.github.io/)
