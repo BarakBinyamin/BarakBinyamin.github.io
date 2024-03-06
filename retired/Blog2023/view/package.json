@@ -1,0 +1,26 @@
+{
+  "name": "blog",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build --emptyOutDir --base=https://barakbinyamin.github.io",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vueform/toggle": "^2.1.3",
+    "firebase": "^9.23.0",
+    "fuse.js": "^6.6.2",
+    "moment": "^2.29.4",
+    "prismjs": "^1.29.0",
+    "showdown": "^2.1.0",
+    "uuid": "^9.0.0",
+    "vue": "^3.2.47",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.1.0",
+    "vite": "^4.2.0"
+  }
+}
