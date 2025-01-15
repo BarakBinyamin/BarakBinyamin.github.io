@@ -15,3 +15,7 @@ colors
 - store
 - email me
 
+# more ideas
+- all my social medias
+- movies, books, spotify
+
