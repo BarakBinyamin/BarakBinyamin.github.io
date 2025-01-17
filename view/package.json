@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build --emptyOutDir --base=https://barakbinyamin.github.io",
+    "build": "vite build --emptyOutDir --base=https://barakbinyamin.github.io; cp ../docs/index.html ../docs/404.html",
     "preview": "vite preview"
   },
   "dependencies": {

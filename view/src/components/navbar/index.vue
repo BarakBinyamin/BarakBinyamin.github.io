@@ -117,30 +117,32 @@ export default {
     align-self: center; /* vertical center in grid */
     justify-self: left;/* hrozontal center in grid */
 }
-.navigation-link{
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 18px;
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */ 
-    align-self: center; /* vertical center in grid */
-    text-decoration: none;
-    /* color: #f0f6fc; */
-    font-weight: 200;
-    height: 100%;
-    overflow: hidden;
+.navigation-link {
+margin-left: 10px;
+margin-right: 10px;
+font-size: 13px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+align-self: center;
+text-decoration: none;
+font-weight: 300;
+height: 100%;
+color: #626262;
+text-transform: UPPERCASE;
 }
 .selected{
     position: relative;
+    color:rgba(0, 0, 0, 1);
 }
 .selected::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: px;
     left: 0;
     width: 0;
+    margin-top: 18px;
     height: 1px;
     background-color: rgba(0, 0, 0, .8); /* Underline color */
     transition: width 0.3s ease; /* Animation effect */

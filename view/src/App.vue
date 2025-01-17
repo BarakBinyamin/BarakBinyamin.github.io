@@ -2,7 +2,7 @@
   <!-- This is the plan -->
   <navbar/>
   <router-view />
-  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6fAnORtBcM6HQWxjvsGxO3?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6fAnORtBcM6HQWxjvsGxO3?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
 
   <!--  -->
   <!-- <img width=500 style="text-align:center" src="/beach.jpeg"/> -->
