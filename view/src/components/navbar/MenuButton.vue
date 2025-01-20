@@ -126,7 +126,8 @@ export default {
 }
 .menu-button:hover{
   background-color: transparent;
-  width: min-content;
+  /* width: min-content; */
+
 }
 
 .menu-button:focus{
