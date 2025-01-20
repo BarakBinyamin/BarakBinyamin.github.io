@@ -2,17 +2,24 @@
 	<transition name="dropdown">
         <div class="contianer" v-if="show && window.width<600">
             <router-link active-class="selected" class="navigation-link" 
+                :to="`/`">
+                home
+            </router-link>
+            <router-link active-class="selected" class="navigation-link" 
                 v-for="link in links" :key="link" :to="`/${link}`">
                 {{link}}
             </router-link>
+            <bottom/>
         </div>
 	</transition>
 </template>
 
 <script>
+import bottom from "../footer/index.vue"
 
 export default {
     name: 'dropdown',
+    components: {bottom},
     props : ['links', 'show'],
         data() {
         return {
@@ -37,19 +44,23 @@ export default {
 
 <style scoped>
 .contianer{
-	z-index               :20;
+	z-index               : 20;
 	position              : absolute;
-	padding               : 5px 0px 5px 0px;
 	display               : grid;
 	grid-template-columns : auto;
-    grid-gap              : 2px;
+    align-items           : center;
+    align-content         : start;
+    justify-items         : center;
+    grid-gap              : 15px;
 	width                 : 100%;
     height                : 100%;
 	overflow              : hidden;
-    border-top: solid;
+    /* border-top: solid; */
     border-width: 1px;
-    background-color: var(--main-bg-color);
     transform-origin: top;
+    background-color: white;
+    left:0;
+    padding-top: 50px
 
 }
 .dropdown-enter-active,
@@ -62,24 +73,21 @@ export default {
   opacity: 0;
 }
 
-.navigation-link{
-    padding: 5px 10px 5px 10px;
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */ 
-    align-self: center; /* vertical center in grid */
-    text-decoration: none;
-    /* color: #f0f6fc; */
-    font-weight: bold;
+.navigation-link {
+    margin-left: 10px;
+    margin-right: 10px;
     font-size: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    align-self: center;
+    text-decoration: none;
+    font-weight: 300;
+    height: 100%;
+    color: #626262;
+    text-transform: UPPERCASE;
 }
-.navigation-link:hover{
-    cursor: pointer;
-    opacity: .6;
-}
-.selected{
-    opacity: .6;
-}
+
 
 </style>

@@ -19,3 +19,5 @@ colors
 - all my social medias
 - movies, books, spotify
 
+# tools
+- [SVG Repo](https://www.svgrepo.com/)

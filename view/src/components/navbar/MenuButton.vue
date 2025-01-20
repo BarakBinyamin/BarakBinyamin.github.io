@@ -52,14 +52,14 @@ export default {
 
 .hamburger {
     margin: 0 auto;
-    width: 35px;
-    height: 30px;
+    width: 25px;
+    height: 20px;
     position: relative;
 }
 
 .hamburger .bar {
     padding: 0;
-    width: 35px;
+    width: 25px;
     height: 1px; 
     background-color: black;
     display: block;
@@ -73,7 +73,7 @@ export default {
 }
 .bar2,
 .bar3 {
-    top: 13.5px;
+    top: 10px;
 }
 .bar3 {
     right: 0;
@@ -94,7 +94,7 @@ export default {
 .checkbox3:checked + label > .hamburger3 > .bar1{
     transform: rotate(45deg);
     height: 1px;
-    width: 42px;
+    width: 30px;
 }
 
 .checkbox3:checked + label > .hamburger3 > .bar3{
@@ -112,7 +112,7 @@ export default {
 .checkbox3:checked + label > .hamburger3 > .bar4{
     transform: rotate(-45deg);
     height: 1px;
-    width: 42px;
+    width: 30px;
 }
 .hamburger{
   /* By default text is non selectable */
@@ -126,6 +126,7 @@ export default {
 }
 .menu-button:hover{
   background-color: transparent;
+  width: min-content;
 }
 
 .menu-button:focus{

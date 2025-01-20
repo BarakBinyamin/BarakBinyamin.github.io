@@ -8,6 +8,8 @@
   display: grid;
   width: 100%;
   padding: 10px;
+  margin: 0;
+  left : 0;
 }
 
 .welcome{

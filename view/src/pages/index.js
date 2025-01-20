@@ -3,10 +3,9 @@ import PageNotFound from   '../pages/PageNotFound.vue'
 import Homepage from  '../pages/homepage/index.vue'
 // import Post from  '../pages/posts/index.vue'
 import Contact from  '../pages/contact/index.vue'
-// import Album from  '../pages/posts/index.vue'
+import Album from  '../pages/album/index.vue'
 // import Blog from  '../pages/posts/index.vue'
 // import Store from  '../pages/posts/index.vue'
-// import Contact from  '../pages/posts/index.vue'
 
 /* Define routes and rendering in order of priority */
 const routes = [
@@ -15,6 +14,16 @@ const routes = [
     name: 'Homepage',
     component: Homepage,
   },
+    {  
+    path: '/album',
+    name: 'album',
+    component: Album,
+  },
+  // {  
+  //   path: '/contact',
+  //   name: 'contact',
+  //   component: Contact,
+  // },
   // {  
   //   path: '/posts/:id',
   //   props: true,

@@ -3,7 +3,7 @@
         <!--Full layout-->
         <div v-if="window.width>=600" class="navbar navbar-full-layout">
             <!-- <img class="logo2" src="/site-images/logo.png"> -->
-            <router-link class=" navigation-link" to="/"> 
+            <router-link class=" navigation-link foo" to="/"> 
                 B.B
             </router-link>
             <div class="empty-buffer-space"/>
@@ -21,7 +21,7 @@
 
         <!--Condensed layout-->
         <div v-if="window.width<600" class="navbar navbar-condensed-layout">
-            <router-link class="navigation-link" to="/"> 
+            <router-link class="navigation-link foo" to="/"> 
                 B.B
             </router-link>
             <div class="empty-buffer-space"/>
@@ -89,10 +89,12 @@ export default {
 <style scoped>
 
 .navbar{
-    width: 100%;
+    width: calc(100% - 20px);
     height: 60px;
     position: relative;
     border-bottom: 1px solid lightgrey;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .logo2{
@@ -118,19 +120,19 @@ export default {
     justify-self: left;/* hrozontal center in grid */
 }
 .navigation-link {
-margin-left: 10px;
-margin-right: 10px;
-font-size: 13px;
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
-align-self: center;
-text-decoration: none;
-font-weight: 300;
-height: 100%;
-color: #626262;
-text-transform: UPPERCASE;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 13px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    align-self: center;
+    text-decoration: none;
+    font-weight: 300;
+    height: 100%;
+    color: #626262;
+    text-transform: UPPERCASE;
 }
 .selected{
     position: relative;
@@ -139,10 +141,9 @@ text-transform: UPPERCASE;
 .selected::after {
     content: '';
     position: absolute;
-    bottom: px;
     left: 0;
     width: 0;
-    margin-top: 18px;
+    margin-top: 24px;
     height: 1px;
     background-color: rgba(0, 0, 0, .8); /* Underline color */
     transition: width 0.3s ease; /* Animation effect */
@@ -164,25 +165,26 @@ text-transform: UPPERCASE;
 }
 
 .navbar-full-layout{
-	margin: 0px 50px 0px 0px;
-    padding: 0px 10px 0px 0px; /* Up Right Down Left */
     display: grid;
     grid-template-columns: 250px auto  min-content min-content min-content min-content;
     grid-gap: 10px;
     height: 60px;
-    width:100%;
     overflow: hidden;
     align-content: center;
 }
 .navbar-condensed-layout{
     display: grid;
-    grid-template-columns: 250px auto 60px;
+    grid-template-columns: 250px auto 40px;
     align-items: center;
     align-content: center;
-    width:100%;
 }
 .toggle-container{
     justify-self: center;
     align-self: center;
+}
+
+.foo{
+    font-weight: 8000;
+    width: min-content;
 }
 </style>
