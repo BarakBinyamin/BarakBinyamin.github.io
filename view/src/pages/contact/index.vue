@@ -38,7 +38,7 @@
   .socials{
     width : 100%;
     display: grid;
-    grid-gap: 22px;
+    grid-gap: 15px;
     align-items: center;
     /* align-content: center; */
     /* background-color: blue; */
