@@ -46,7 +46,7 @@
     padding: 0;
     margin: 0;
     height: min-content;
-    margin-top: calc(50%);
+    margin-top: calc(50vh - 150px);
     position: relative;
   }
   .container{
