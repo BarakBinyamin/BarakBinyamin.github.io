@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <div class="socials" >
+            <div style="text-align:center;padding:10px;font-size:19px;font-weight: 200">SoCiAL MEdia 👇</div>
             <!-- faceebook -->
             <a class="link" target="_blank" href="https://www.facebook.com/barak.binyamin.7/">
                 <svg fill="#848484"                     height="50px" width="50px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 310 310" xml:space="preserve" stroke="#848484"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_834_"> <path id="XMLID_835_" d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064 c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996 V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545 C187.467,0.023,186.832,0,185.896,0c-7.035,0-31.488,1.381-50.804,19.151c-21.402,19.692-18.427,43.27-17.716,47.358v37.752H81.703 c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z"></path> </g> </g></svg>
@@ -33,7 +34,6 @@
   .socials{
     width : 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 40px);
     grid-gap: 22px;
     align-items: center;
     /* align-content: center; */
@@ -46,15 +46,13 @@
     padding: 0;
     margin: 0;
     height: min-content;
-    margin-top: calc(50vh - 150px);
+    /* margin-top: calc(50vh - 150px); */
     position: relative;
   }
   .container{
     display: block;
     width: 100%;
     left: 0;
-    padding-top: 30px;
-    padding-bottom: 20px;
     display: grid;
     height: 100%;
   }
