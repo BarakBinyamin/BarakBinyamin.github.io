@@ -77,7 +77,7 @@ export default{
     }
   },
   async created(){
-    const res  = await fetch("/posts/1/proactive-nastalgia.md")
+    const res  = await fetch("/posts/a1/proactive-nastalgia.md")
     const text = await res.text()
     const yamlMatch = text.match(/^---\n([\s\S]*?)\n---\n/)
     const yamlData  = yamlMatch[1]
