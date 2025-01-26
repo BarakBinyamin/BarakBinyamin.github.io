@@ -12,8 +12,18 @@ colors
 # Features
 - full site search
 - blogs
+    - Search bar
+    - Top most recent, title date created
+    - JSON meta data, where post is in markdown format
+    - Pagination api 10/page
+    - each blog
+        - header title, subtitle, author, date, minute read, user picture, 
+        - Example https://medium.com/localhost-run/tlds-from-donuts-inc-are-a-huge-risk-209d88806b13
+        - claps, comments, share button
+        - up to three symbols? maybe later
 - store
 - email me
+- consider moving css to tailwind
 
 # more ideas
 - all my social medias

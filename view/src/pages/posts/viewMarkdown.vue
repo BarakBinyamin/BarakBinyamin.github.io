@@ -1,22 +1,48 @@
 <template>
+  <div class="post-metadata">
+    <div lang="de" class="post-title">{{ meta?.title }}</div>
+    <div lang="de" class="post-subtitle">{{ meta?.subtitle }}</div>
+    <div class="post-info"> 
+      <img class="post-author-avatar" src="/site-images/avatar2.png"/>
+      <div class="post-sub-info">
+        <div class="post-author-name">Barak Binyamin</div> ·
+        <div class="post-date">{{ date }}</div> ·
+        <div class="post-length">5 min read</div>
+      </div>
+    </div>
+    <div class="post-bar">
+      <!-- share -->
+      <!-- comment -->
+      <!-- like limited once per machine per post per day-->
+    </div>
+  </div>
+  <div class="markdown-container">
     <div id="markdown" v-html='markdownHTML'></div>
+  </div>
 </template>
 
 <script>
 import Prism    from "prismjs"
 import "prismjs/themes/prism-tomorrow.css"
 import showdown from "showdown"
+import moment   from 'moment'
+
 
 export default{
-  props: ['markdownContent'],
+  props: ['markdownContent', 'meta'],
   data(){
     return {
-      markdownHTML : ""
+      markdownHTML : "",
+      date         : ""
     }
   },
   watch:{
     markdownContent : async function(){
       this.load()
+      if (this.meta?.date){
+        // node> date.now()
+        this.date = moment(this.meta?.date).format("MMM Do yyyy")
+      }
     } 
   },
   methods: {
@@ -67,8 +93,35 @@ export default{
 
 
 <style>
+.post-metadata{
+  margin: 20px;
+  width: 100%;
+  overflow: hidden;
+  width: 100%;
+  display: grid;
+  justify-items : center;
+}
+
+
+.markdown-container{
+  display  : grid;
+  position: relative;
+  justify-items: center;
+  width: 100%;
+}
+
 #markdown{
+  display: grid;
   font-size: 1.1em;
+  width: 80%;
+  max-width: 680px;
+  overflow-x : hidden;
+  justify-self: center;
+  font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-weight: 400;
+  color : #242424;
+  line-height: 32px;
+
 }
 
 #markdown h1,#markdown h2, #markdown h3, #markdown h4{
@@ -85,11 +138,106 @@ export default{
   padding: 5px !important;
   overflow-wrap: break-word;
 }
+/* Fix sizes */
+.post-title {
+  display: block;
+  font-size: 28px;
+  font-weight : 600;
+  color       : #242525;
+  width: 100%;
+  max-width: 680px;
+  margin: 4px;
+  word-break: break-all;
+  word-break: break-all;
+  overflow-x: hidden;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto; 
+  word-wrap: break-word;
+  padding-right: 56px;
+}
+.post-subtitle{
+  display: block;
+  font-size: 22px;
+  font-weight : 400;
+  color: #6B6A6A;
+  width: 100%;
+  max-width: 680px;
+  align-self: left;
+  margin: 4px;
+  word-break: break-all;
+  overflow-x: hidden;
+  padding-right: 44px;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto; 
+  word-wrap: break-word;
 
-/* #markdown img{
+}
+
+.post-info{
+  display: grid;
+  grid-template-columns: 50px auto;
+  justify-content: left;
+  width: 100%;
+  max-width: 680px;
   margin-top: 10px;
+}
+.post-sub-info{
+  display: grid;
+  width: 100%;
+  grid-template-columns: max-content max-content max-content max-content;
+  justify-content: left;
+  align-items: center;
+  align-content: center;
+  padding-left: 10px;
+  margin-top: -5px;
+  grid-column-gap: 8px;
+}
+.post-author-avatar{
+  background: blue;
+  width: 100%;
+  height: 50px;
+  border-radius: 100%;
+  background-size: auto;
+}
+.post-author-name{
+  font-size: 15px;
+  color: #242525;
+  font-weight: 300;
+}
+.post-date{
+  font-size: 15px;
+  color: #6B6A6A;
+}
+.post-length{
+  color    : #6B6A6A;
+  font-size: 15px;
+}
+#markdown h1{
+  font-size: 28px;
+}
+#markdown h2{
+  font-size: 25px;
+}
+#markdown h3{
+  font-size: 23px;
+}
+#markdown h4{
+  font-size: 21;
+}
+#markdown p{
+  font-size: 18px;
+}
+
+#markdown img{
+  margin-top   : 10px;
   margin-bottom: 10px;
-} */
+  object-fit   : contain;
+  width        : 100%;
+}
 
 pre{
   position: relative;
@@ -97,7 +245,10 @@ pre{
   overflow-x: scroll;
   margin: 20px 20px 20px 20px !important;
   padding: 1em !important;
-  font-size: .9em !important;
+  font-size: .5em !important;
+  width: 100%;
+  max-width: 500px;
+  justify-self: center;
 }
 
 @media (any-pointer: coarse)  {
@@ -107,20 +258,26 @@ pre{
     overflow-x: scroll;
     margin: 10px 10px 10px 10px !important;
     padding: 1em !important;
-    font-size: .8em !important;
+    font-size: .5em !important;
   }
 }
 
+pre .language-html{
+  width : 100%;
+  margin:0;
+  position: relative;
+}
 code{
   height: min-content !important;
   padding: 0px !important;
   margin: 0px !important;
+  font-size: 10px;
 }
-
+/* copy div is next to code div */
 .copy{
-  position: absolute;
-  top: 5px;
-  right:5px;
+  position: sticky;
+  top: 0px;
+  left: calc(100% - 35px);
   display: block;
   width: 35px;
   height: 35px;

@@ -7,6 +7,7 @@
     <!-- <bottom/> -->
     <!--  -->
     <!-- <img width=500 style="text-align:center" src="/beach.jpeg"/> -->
+    <div class="padding"></div>
 </template>
 
 <script>
@@ -26,19 +27,23 @@ export default {
 }
 
 </script>
-<style >
+<style>
 /* Defaults & style */
 * {
   box-sizing: border-box;
 }
 /* https://stackoverflow.com/questions/5102820/scrolling-of-whole-page-instead-of-inner-div-only */
-html, body { height: 100%; } 
+/* html, body { height: 100%; }  */
 html,body{
   margin    : 0px;
   top       : 0px;
   background: var(--bg-color);
   overflow-x: hidden;
   overflow-y: scroll;
+}
+/* dark scroll bar */
+:root {
+  color-scheme: dark;
 }
 /* body{
   min-height: 100vh; 
@@ -83,5 +88,15 @@ img {
   display: block;
   width: 100%;
   height: max-content;
+}
+.horizontal-center{
+  display      : grid;
+  width        : 100%;
+  justify-items: center;
+}
+.padding{
+  display: block;
+  width: 100%;
+  height: 300px;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-<div style="text-align:center;padding:10px;font-size:19px;font-weight: 200">some great pictures</div>
+<div style="text-align:center;padding:10px;font-size:19px;font-weight: light;color:#333333">some great pictures</div>
 <div class="row"> 
   <div class="column">
     <img src="https://placehold.co/200x300" style="width:100%">

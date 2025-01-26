@@ -79,6 +79,7 @@
   }
   .blog{
     width: 100%;
+    background-color: blue;
     display: grid;
     justify-content: center;
     
