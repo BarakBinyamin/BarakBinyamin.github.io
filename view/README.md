@@ -25,6 +25,10 @@ colors
 - email me
 - consider moving css to tailwind
 
+# Blog Generator 
+- add an md to a database using the api
+- 
+
 # more ideas
 - all my social medias
 - movies, books, spotify

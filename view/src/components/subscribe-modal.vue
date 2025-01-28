@@ -4,7 +4,7 @@
         <button @click="closeModal" class="close-btn">×</button>
         <h2 class="modal-title">{{ isSuccess ? 'Thank You!' : 'Stay Updated!' }}</h2>
         <p class="modal-description">
-          {{ isSuccess ? 'You\'ve been added to the newsletter!' : 'Subscribe to get the latest updates' }}
+          {{ isSuccess ? 'You\'re request to be added to the newsletter has been sent!' : 'Subscribe to get the latest updates' }}
         </p>
   
         <!-- Conditional content based on success or failure -->

@@ -1,0 +1,20 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Services I serve off an old laptop in my house, they'll do all the stuff that github can't do like a interface with a database for my blogs and help me automate my emails",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^13.1.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "meilisearch": "^0.48.2",
+    "socket.io": "^4.8.1",
+    "web-push": "^3.6.7"
+  }
+}

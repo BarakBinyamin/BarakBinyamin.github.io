@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  meilisearch:
+    image: getmeili/meilisearch:v0.25.0
+    container_name: meilisearch
+    environment:
+      MEILI_NO_ANALYTICS: 'true'             # Disables analytics for privacy
+      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY}  # Use the value from .env file
+    ports:
+      - '7700:7700'                          # Expose MeiliSearch on port 7700
+    volumes:
+      - ./database:/meili_data         # Persist data across restarts
+    restart: always
+
+  api:
+    build: ./api
+    container_name: node-api
+    environment:
+      MEILI_URL: ${MEILI_URL}  # Reference MEILI_URL from .env
+      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY}  # Reference MEILI_MASTER_KEY from .env
+    ports:
+      - '3000:80'  # Expose API redirect on port 80
+      - '4000:443' # Expose API on port 443
+    depends_on:
+      - meilisearch
+    restart: always
+    command: ["sh", "-c", "node setupMeiliSearch.js && node index.js"]
+
+volumes:
+  meilisearch_data:

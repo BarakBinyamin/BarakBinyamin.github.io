@@ -147,14 +147,13 @@ export default{
   width: 100%;
   max-width: 680px;
   margin: 4px;
-  word-break: break-all;
-  word-break: break-all;
+  /* word-break: break-word; */
   overflow-x: hidden;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto; 
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
   padding-right: 56px;
 }
 .post-subtitle{
@@ -166,14 +165,14 @@ export default{
   max-width: 680px;
   align-self: left;
   margin: 4px;
-  word-break: break-all;
+  /* word-break: break-word; */
   overflow-x: hidden;
   padding-right: 44px;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto; 
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
 
 }
 

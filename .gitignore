@@ -13,7 +13,11 @@ lerna-debug.log*
 
 # Dependencies
 node_modules
+package-lock.json
 *.local
+
+# secret keys
+.env
 
 # Editor directories and files
 .vscode/*
@@ -25,3 +29,4 @@ node_modules
 *.njsproj
 *.sln
 *.sw?
+
