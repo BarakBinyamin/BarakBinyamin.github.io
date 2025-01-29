@@ -196,7 +196,7 @@ export default{
   grid-column-gap: 8px;
 }
 .post-author-avatar{
-  background: blue;
+  background: #333;
   width: 100%;
   height: 50px;
   border-radius: 100%;

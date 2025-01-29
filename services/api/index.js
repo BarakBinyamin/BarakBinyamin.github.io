@@ -7,12 +7,6 @@ const express        = require("express")
 const cookieParser   = require('cookie-parser')
 const { program }    = require('commander')
 
-const api            = express()
-const router         = express.Router()
-const jsonParser     = express.json()
-const server         = https.createServer(credentials, api)
-const io             = socketIo(server)
-
 program
   .requiredOption('--port  <char>', 'internal api domain and port')
   .requiredOption('--webui <char>', 'Ex. https://pebblez.us or http://192.168.4.51:3000')
@@ -24,9 +18,15 @@ const API_PORT   = options.port
 const WEBUI      = options.webui
 const DEVMODE    = options.dev
 
-const privateKey   = fs.readFileSync('ssl/private.key', 'utf8')
-const certificate  = fs.readFileSync('ssl/certificate.crt', 'utf8')
-const credentials  = { key: privateKey, cert: certificate }
+const privateKey = fs.readFileSync('certs/privkey.pem', 'utf8')
+const certificate= fs.readFileSync('certs/fullchain.pem', 'utf8')
+const credentials= { key: privateKey, cert: certificate }
+
+const api            = express()
+const router         = express.Router()
+const jsonParser     = express.json()
+const server         = https.createServer(credentials, api)
+const io             = socketIo(server)
 
 const useCookies     = cors(
 	{
@@ -47,10 +47,10 @@ api.use(cookieParser())
 
 api.use(dontUseCookies)
 
-const blog        = require('./blog'    )(io)
+const blog        = require('./blog'    )(io) //(io)
 const generic     = require('./generic' )
 
 api.use('/blog',     blog    ) 
-api.use('/',         generic )
+api.use('*',         generic )
 
 server.listen(API_PORT,()=>{console.log(`Launching api on port ${API_PORT}...`)})

@@ -68,6 +68,7 @@ import { ref } from 'vue'
 import SubscribeModal from '../../components/subscribe-modal.vue';
 import markdown from '../posts/viewMarkdown.vue'
 import jsyaml from 'js-yaml'
+import API from '../../assets/api.js'
 
 export default{
   components : { SubscribeModal, markdown },
@@ -77,14 +78,17 @@ export default{
     }
   },
   async created(){
-    const res  = await fetch("/posts/a1/proactive-nastalgia.md")
-    const text = await res.text()
-    const yamlMatch = text.match(/^---\n([\s\S]*?)\n---\n/)
-    const yamlData  = yamlMatch[1]
-    const meta      = jsyaml.load(yamlData)
-    const content   = text.replace(/^---\n([\s\S]*?)\n---\n/,"")
-    this.meta = meta
-    this.post = content
+    // const res  = await fetch("/posts/a1/proactive-nastalgia.md")
+    // const text = await res.text()
+    // const yamlMatch = text.match(/^---\n([\s\S]*?)\n---\n/)
+    // const yamlData  = yamlMatch[1]
+    // const meta      = jsyaml.load(yamlData)
+    // const content   = text.replace(/^---\n([\s\S]*?)\n---\n/,"")
+    // this.meta = meta
+    // this.post = content
+    let results = await API.searchBlog(" ")
+    console.log('here')
+    console.log(results)
   },
   data(){
     return {

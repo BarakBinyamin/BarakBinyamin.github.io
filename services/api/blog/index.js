@@ -1,7 +1,17 @@
-const express = require('express')
-const router = express.Router()
+const express         = require('express')
+const router          = express.Router()
+const { MeiliSearch } = require('meilisearch')
 
-// Logic
+const MEILI_URL        = process.env.MEILI_URL || 'http://meilisearch:7700' 
+const MEILI_MASTER_KEY = process.env.MEILI_MASTER_KEY
+
+const client = new MeiliSearch({
+  host  : MEILI_URL, 
+  apiKey: MEILI_MASTER_KEY,     
+})
+const index = client.index('blogs')
+
+// ----- Logic ------
 // walled createBlog
 // walled updateBlog
 // walled deleteBlog
@@ -9,48 +19,127 @@ const router = express.Router()
 // searchBlog()
 // subscribetoBlog(email) // add homie to the email list
 
+function fail(res){
+  res.send({"success":false})
+}
+function success(res){
+  res.send({"success":true})
+}
+
+console.log('hey')
 // Routes
-module.exports = (io, config) => {
-  // Example HTTP route: GET /api/hello
-  router.get('/hello', (req, res) => {
-    res.json({
-      message: `Hello from ${config.appName}!`,
-      version: config.version,
-    });
-  });
+module.exports = (io) => {
+  router.post('/createBlog', async (req, res) => { 
+    try {
+      const { title, subtitle, img, date, author, content, tags } = req.body
+      if (!title || !content) {fail(res)}
+      const blog = {title, subtitle, img, date, author, content, tags: tags || []} 
+      const result = await index.addDocuments([blog])
+      success(res)
+    } catch (err) {
+      fail(res)
+    }
+  })
 
-  // Example POST route: /api/message
-  router.post('/message', (req, res) => {
-    const { message } = req.body;
-    res.json({
-      receivedMessage: message,
-      apiPrefix: config.apiPrefix,
-    });
-  });
+  router.put('/updateBlog', async (req, res) => {
+    try {
+      const { title, subtitle, img, date, author, content, tags } = req.body
+      if (!title || !content) {fail(res)}
+      const blog = {title, subtitle, img, date, author, content, tags: tags || []} 
+      const result = await index.addDocuments([blog])
+      success(res)
+    } catch (err) {
+      fail(res)
+    }
+  })
 
-  // WebSocket events inside the same file
-  // use of systax, full path syntax probably
-  io.on('connection', (socket) => {
-    console.log(`${config.appName}: A new WebSocket connection established!`);
+  router.delete('/deleteBlog/:id', async (req, res) => {
+    try {
+      const { id } = req.params
+      await index.deleteDocument(id)
+      success(res)
+    } catch (err) {
+      fail(res)
+    }
+  })
 
-    // Handle incoming WebSocket message (chat-message)
-    socket.on('chat-message', (message) => {
-      console.log('Received WebSocket message:', message);
-      // Broadcast the message to all connected clients
-      io.emit('chat-message', message);
-    });
+  router.get('/getBlog/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const blog = await index.getDocument(id)
+      if (!blog) {
+        return res.status(404).send('Blog not found')
+      }
+      res.json(blog);
+      } catch (err) {
+        res.status(500).send('Error fetching blog: ' + err.message)
+    }
+  })
 
-    // Handle WebSocket room join event
-    socket.on('join-room', (roomName) => {
-      socket.join(roomName);
-      console.log(`${config.appName}: User joined room: ${roomName}`);
-    });
+  // working yay
+  router.post('/searchBlog', async (req, res) => {
+    try {
+      const { query } = req.body
+      if (!query) {
+        return res.status(400).send('Query parameter is required')
+      }
+      const searchResults = await index.search(query, {limit: 10 })
 
-    // Handle disconnection
-    socket.on('disconnect', () => {
-      console.log(`${config.appName}: A WebSocket connection was disconnected`);
-    });
-  });
+      res.json(searchResults);
+    } catch (err) {
+      fail(res)
+    }
+  })
+  router.get('/', async (req, res) => {
+    console.log('here1')
+    res.send({"success":true})
+  })
+  router.post('/*', async (req, res) => {
+    console.log('here2')
+    fail(res)
+  })
 
-  return router;
-};
+  return router
+}
+
+ // // 6. Subscribe to a blog
+  // app.post('/subscribeToBlog', (req, res) => {
+  //   const { email } = req.body;
+
+  //   if (!email) {
+  //     return res.status(400).send('Email is required');
+  //   }
+
+  //   // Check if email is already subscribed
+  //   if (subscribers.includes(email)) {
+  //     return res.status(400).send('Email is already subscribed');
+  //   }
+
+  //   subscribers.push(email);
+
+  //   res.status(201).send('Subscribed successfully');
+  // });
+
+  // // WebSocket events inside the same file
+  // // use of systax, full path syntax probably
+  // io.on('connection', (socket) => {
+  //   console.log(`${config.appName}: A new WebSocket connection established!`);
+
+  //   // Handle incoming WebSocket message (chat-message)
+  //   socket.on('chat-message', (message) => {
+  //     console.log('Received WebSocket message:', message);
+  //     // Broadcast the message to all connected clients
+  //     io.emit('chat-message', message);
+  //   });
+
+  //   // Handle WebSocket room join event
+  //   socket.on('join-room', (roomName) => {
+  //     socket.join(roomName);
+  //     console.log(`${config.appName}: User joined room: ${roomName}`);
+  //   });
+
+  //   // Handle disconnection
+  //   socket.on('disconnect', () => {
+  //     console.log(`${config.appName}: A WebSocket connection was disconnected`);
+  //   });
+  // });

@@ -19,6 +19,10 @@ package-lock.json
 # secret keys
 .env
 
+# data
+services/database/data.ms 
+services/database/dumps
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

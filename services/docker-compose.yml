@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   meilisearch:
-    image: getmeili/meilisearch:v0.25.0
+    image: getmeili/meilisearch:v1.12
     container_name: meilisearch
     environment:
       MEILI_NO_ANALYTICS: 'true'             # Disables analytics for privacy
@@ -10,22 +10,23 @@ services:
     ports:
       - '7700:7700'                          # Expose MeiliSearch on port 7700
     volumes:
-      - ./database:/meili_data         # Persist data across restarts
-    restart: always
-
+      - ./database:/meili_data               # Persist data across restarts
+    restart: no
+    user   : "1000:1000"                     # this needs to be $(id -u):$(id -g) 
+    
   api:
     build: ./api
     container_name: node-api
     environment:
-      MEILI_URL: ${MEILI_URL}  # Reference MEILI_URL from .env
+      MEILI_URL: ${MEILI_URL}                # Reference MEILI_URL from .env
       MEILI_MASTER_KEY: ${MEILI_MASTER_KEY}  # Reference MEILI_MASTER_KEY from .env
     ports:
-      - '3000:80'  # Expose API redirect on port 80
-      - '4000:443' # Expose API on port 443
+      - '80:3000'  
+      - '443:4000' 
     depends_on:
       - meilisearch
     restart: always
-    command: ["sh", "-c", "node setupMeiliSearch.js && node index.js"]
+    command: ["sh", "-c", "node setupMeiliSearch.js && node index.js --port 4000 --webui 'https://192.168.1.147' "]
 
 volumes:
   meilisearch_data:

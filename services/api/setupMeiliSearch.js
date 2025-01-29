@@ -1,7 +1,7 @@
 const { MeiliSearch } = require('meilisearch');
 
 // Fetch the MeiliSearch URL and master key from environment variables
-const MEILI_URL = process.env.MEILI_URL || 'http://meilisearch:7700'; // Default to local URL if not set
+const MEILI_URL        = process.env.MEILI_URL || 'http://meilisearch:7700'; // Default to local URL if not set
 const MEILI_MASTER_KEY = process.env.MEILI_MASTER_KEY; // This should be set in the .env file
 
 if (!MEILI_MASTER_KEY) {
@@ -11,7 +11,7 @@ if (!MEILI_MASTER_KEY) {
 
 // Initialize MeiliSearch client
 const client = new MeiliSearch({
-  host: MEILI_URL,
+  host  : MEILI_URL,
   apiKey: MEILI_MASTER_KEY, // Use the master key from the environment
 });
 
@@ -19,7 +19,7 @@ const client = new MeiliSearch({
 const desiredSettings = {
   searchableAttributes: ['name', 'tags', 'content'],
   filterableAttributes: ['tags', 'id'],
-  sortableAttributes: ['date'],
+  sortableAttributes  : ['date'],
 };
 
 // Create or check the 'blogs' index and apply settings only if necessary
@@ -27,7 +27,7 @@ async function checkAndSetupMeiliSearch() {
   try {
     // Check if the 'blogs' index already exists
     const indexList = await client.getIndexes();
-    let blogIndex = indexList.find(index => index.uid === 'blogs');
+    let blogIndex = false //indexList.find(index => index.uid === 'blogs');
 
     if (blogIndex) {
       console.log('Index "blogs" already exists.');
@@ -55,11 +55,12 @@ async function checkAndSetupMeiliSearch() {
       console.log('Index "blogs" does not exist. Creating it...');
 
       // Create the 'blogs' index with primary key 'id'
-      blogIndex = await client.createIndex('blogs', { primaryKey: 'id' });
+      let res   = await client.createIndex('blogs', { primaryKey: 'id' })
+      blogIndex = 
       console.log('Index created successfully.');
 
       // Apply the desired settings to the new index
-      await blogIndex.updateSettings(desiredSettings);
+      client.index('blogs').updateSettings(desiredSettings);
       console.log('Settings applied successfully.');
     }
   } catch (error) {
