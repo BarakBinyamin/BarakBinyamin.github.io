@@ -19,33 +19,50 @@ const index = client.index('blogs')
 // searchBlog()
 // subscribetoBlog(email) // add homie to the email list
 
-function fail(res){
-  res.send({"success":false})
+function fail(res,err){
+  res.send({"success":false, "error":err})
 }
 function success(res){
   res.send({"success":true})
 }
 
-console.log('hey')
 // Routes
 module.exports = (io) => {
   router.post('/createBlog', async (req, res) => { 
     try {
-      const { title, subtitle, img, date, author, content, tags } = req.body
+      const { id, title, subtitle, img, date, author, content, tags } = req.body
       if (!title || !content) {fail(res)}
-      const blog = {title, subtitle, img, date, author, content, tags: tags || []} 
+      const blog = {
+        id       : id,        // title but with hypens
+        title    : title,    
+        subtitle : subtitle, 
+        img      : img,       // cover image
+        date     : date,      // UTC seconds since 1970
+        author   : author,
+        content  : content,   // markdown text
+        tags     : tags || []
+      } 
       const result = await index.addDocuments([blog])
       success(res)
     } catch (err) {
-      fail(res)
+      fail(res,err)
     }
   })
 
-  router.put('/updateBlog', async (req, res) => {
+  router.post('/updateBlog', async (req, res) => {
     try {
-      const { title, subtitle, img, date, author, content, tags } = req.body
+      const { id, title, subtitle, img, date, author, content, tags } = req.body
       if (!title || !content) {fail(res)}
-      const blog = {title, subtitle, img, date, author, content, tags: tags || []} 
+      const blog = {
+        id       : id,        // title but with hypens
+        title    : title,    
+        subtitle : subtitle, 
+        img      : img,       // cover image
+        date     : date,      // UTC seconds since 1970
+        author   : author,
+        content  : content,   // markdown text
+        tags     : tags || []
+      } 
       const result = await index.addDocuments([blog])
       success(res)
     } catch (err) {

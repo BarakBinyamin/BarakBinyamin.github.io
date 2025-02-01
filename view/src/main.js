@@ -9,7 +9,7 @@ app.use(router         )
 app.use(clickOutside   )
 
 // Initialize Lenis - Nice Scrolling
-const lenis = new Lenis();
+const lenis = new Lenis({scrollSpeed:2});
 function raf(time) {lenis.raf(time);requestAnimationFrame(raf);}
 requestAnimationFrame(raf);
 

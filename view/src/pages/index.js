@@ -4,7 +4,7 @@ import Homepage from  '../pages/homepage/index.vue'
 // import Post from  '../pages/posts/index.vue'
 import Contact from  '../pages/contact/index.vue'
 import Album from  '../pages/album/index.vue'
-// import Blog from  '../pages/posts/index.vue'
+import Blog from  '../pages/blog/index.vue'
 // import Store from  '../pages/posts/index.vue'
 
 /* Define routes and rendering in order of priority */
@@ -25,11 +25,17 @@ const routes = [
   //   component: Contact,
   // },
   // {  
-  //   path: '/posts/:id',
+  //   path: '/blog/:id',
   //   props: true,
   //   name: 'postid',
   //   component: Post,
   // },
+   {  
+    path: '/blog',
+    props: true,
+    name: 'blog',
+    component: Blog,
+  },
   {  
     path: '/contact',
     name: 'contact',

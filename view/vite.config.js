@@ -8,5 +8,10 @@ export default defineConfig({
   ],
   build: {
     outDir: '../docs'
+  },
+  server : {
+    allowedHosts : [
+      "a76ec4b65f02d0.lhr.life"
+    ]
   }
 })

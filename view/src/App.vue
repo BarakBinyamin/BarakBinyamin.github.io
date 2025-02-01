@@ -39,7 +39,6 @@ html,body{
   top       : 0px;
   background: var(--bg-color);
   overflow-x: hidden;
-  overflow-y: scroll;
 }
 /* dark scroll bar */
 :root {

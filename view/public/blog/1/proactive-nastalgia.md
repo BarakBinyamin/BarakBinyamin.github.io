@@ -1,5 +1,6 @@
 ---
 title    : January Updates
+id       : proactive-nastalgia
 subtitle : >
         Thinking aabout west coast swingas
         dasd

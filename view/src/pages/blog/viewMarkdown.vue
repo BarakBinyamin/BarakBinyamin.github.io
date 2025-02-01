@@ -41,7 +41,7 @@ export default{
       this.load()
       if (this.meta?.date){
         // node> date.now()
-        this.date = moment(this.meta?.date).format("MMM Do yyyy")
+        this.date = moment(this.meta?.date).format("MMM Do, yyyy")
       }
     } 
   },
@@ -121,7 +121,11 @@ export default{
   font-weight: 400;
   color : #242424;
   line-height: 32px;
+}
 
+#markdown{
+  padding: 5px !important;
+  overflow-wrap: break-word;
 }
 
 #markdown h1,#markdown h2, #markdown h3, #markdown h4{
@@ -134,10 +138,6 @@ export default{
   margin-bottom: .5em;
 }
 
-#markdown{
-  padding: 5px !important;
-  overflow-wrap: break-word;
-}
 /* Fix sizes */
 .post-title {
   display: block;
@@ -208,12 +208,12 @@ export default{
   font-weight: 300;
 }
 .post-date{
-  font-size: 15px;
+  font-size: 13px;
   color: #6B6A6A;
 }
 .post-length{
   color    : #6B6A6A;
-  font-size: 15px;
+  font-size: 13px;
 }
 #markdown h1{
   font-size: 28px;

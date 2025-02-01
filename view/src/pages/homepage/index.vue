@@ -27,7 +27,7 @@
           <svg viewBox="0 0 1024 1024"             height="30px" width="30px" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#848484"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512 599.6L107.9 311.1v19.7L512 619.3l404.1-288.6V311L512 599.6z" fill="#848484"></path><path d="M63.9 187v650h896.2V187H63.9z m852.2 598.5L672.2 611.3l-13.8 9.8L899.1 793H125.5l240.6-171.8-13.8-9.8-244.4 174.5V231h808.2v554.5z" fill="#848484"></path><path d="M512.9 536.7m-10 0a10 10 0 1 0 20 0 10 10 0 1 0-20 0Z" fill="#848484"></path></g></svg>
         </a>
       </div>
-        <div class="welcome">Hey there 👋, I'm Barak, a passionate creative in boston. When I'm not at work, you can usually find me rock climbing, dancing west coast swing, and stiching togeather side projects in a coffee shop.
+        <div class="welcome">Hey there 👋, I'm Barak, a passionate creative in Boston. When I'm not at work, you can usually find me rock climbing, dancing west coast swing, and stiching together side projects in a coffee shop.
         Thanks for checking out my website, I enjoy meeting new people so don't hesitate to <a class="link" href="/contact">reach out</a>!  
         <br><br><a class="subscribe-button" @click="openModal">Subscribe</a> to my blog posts for high quality banter, and don't forget to check out the store for merch, tech stuff, and custom spice packs
       </div>
@@ -53,7 +53,7 @@
     <SubscribeModal ref="subscribeModal" />
     </div>
 
-    <markdown :markdownContent="post" :meta="meta"/>
+    <!-- <markdown :markdownContent="post" :meta="meta"/> -->
 
     <!-- Some of my favorite ads -->
     <!-- Latest Updates -->
@@ -64,10 +64,8 @@
 </template>
 
 <script>
-import { ref } from 'vue'
 import SubscribeModal from '../../components/subscribe-modal.vue';
-import markdown from '../posts/viewMarkdown.vue'
-import jsyaml from 'js-yaml'
+import markdown from '../blog/viewMarkdown.vue'
 import API from '../../assets/api.js'
 
 export default{
@@ -89,6 +87,8 @@ export default{
     let results = await API.searchBlog(" ")
     console.log('here')
     console.log(results)
+    this.meta = results['hits'][0]
+    this.post = results['hits'][0].content
   },
   data(){
     return {
