@@ -133,7 +133,7 @@ export default{
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 999;
+  z-index: 2;
   background-position: 100px;;
   background: -webkit-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,0), rgba(255,255,255, 1));
   background: -moz-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,0), rgba(255,255,255, 1));
