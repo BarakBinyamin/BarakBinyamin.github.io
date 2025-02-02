@@ -1,7 +1,11 @@
 <template>
     <!-- This is the plan -->
     <navbar/>
-    <router-view />
+    <router-view v-slot="{ Component }">
+      <transition name="fade">
+        <component :is="Component" />
+      </transition>
+    </router-view>
     <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6fAnORtBcM6HQWxjvsGxO3?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
     <!-- <div style="background:blue ; height:1000px; width: 100px;"></div> -->
     <!-- <bottom/> -->
@@ -98,4 +102,22 @@ img {
   width: 100%;
   height: 300px;
 }
+
+/* .fade-move,
+.fade-enter-active{
+  transition-delay: .5s;
+  transition: opacity .5s ease-out;
+}
+.fade-leave-active {
+  transition: opacity 0s;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+} */
+
+router-view{
+  position: absolute;
+}
+
 </style>

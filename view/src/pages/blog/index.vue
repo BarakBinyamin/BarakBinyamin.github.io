@@ -1,20 +1,25 @@
 <template>
-      <!-- Smalls -->
-   <div v-for="blog in blogs" class="post-metadata preview">
-      <div lang="de" class="post-title">{{ blog.title }}</div>
-      <div lang="de" class="post-subtitle">{{ blog.subtitle }}</div>
-      <div class="post-info"> 
-         <img class="post-author-avatar" src="/site-images/avatar2.png"/>
-         <div class="post-sub-info">
-            <div class="post-author-name"> {{ blog.author }} </div>
-            <div class="post-date">{{ format(blog.date)}}</div> ·
-            <div class="post-length">5 min read</div>
-         </div>
+  <!-- Smalls -->
+  <div class="preview-list">
+    <router-link :to="'/blog/'+blog.id" v-for="blog in blogs" class="preview-tile">
+      <div class="post-metadata">
+        <div class="post-info"> 
+          <img class="post-author-avatar" src="/site-images/avatar2.png"/>
+          <div class="post-sub-info">
+              <div class="post-author-name"> {{ blog.author }}</div>
+              <div class="post-date">{{ format(blog.date)}} ·</div> 
+              <div class="post-length">{{blog.length}}</div>
+          </div>
+        </div>
+        <div lang="de" class="post-title">{{ blog.title }}</div>
+        <div lang="de" class="post-subtitle">{{ blog.subtitle }}</div>
       </div>
-      <div class="preview">
+      <div>
         <div id="markdown" v-html='render(blog.content)'></div>
       </div>
-   </div>
+      <div class="preview-cover"><div class="continue-reading">Read more...</div></div>
+    </router-link>
+  </div>
 </template>
 
 <script>
@@ -30,7 +35,7 @@ export default{
          blogs : []
       }
    },
-   async mounted(){
+   async created(){
       let results = await API.searchBlog(" ")
       console.log('here')
       this.blogs = results['hits']
@@ -86,8 +91,30 @@ export default{
 </script>
 
 <style scoped>
+.preview-list{
+  display: grid;
+  width: 100%;
+  justify-items: center;
+  grid-gap: 15px;
+  padding : 10px;
+}
+.preview-tile{
+  max-height: 300px;
+  max-width: 600px;
+  overflow: hidden;
+  position: relative;
+  /* box-shadow: 0 1px 8px 0 rgba(0, 0, 0, .2); */
+  padding-bottom: 100px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+/* .preview-tile:hover{
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .4);
+  transition: box-shadow .2s;
+  opacity: 1;
+} */
 .post-metadata{
-  margin: 20px;
+  margin: 0;
+  padding: 20px 20px 0px 20px;
   width: 100%;
   overflow: hidden;
   width: 100%;
@@ -100,7 +127,33 @@ export default{
   border: 1px solid red;
   margin: 0;
 }
-
+.preview-cover{
+  top: 0px;
+  display: grid;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-position: 100px;;
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,0), rgba(255,255,255, 1));
+  background: -moz-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,0), rgba(255,255,255, 1));
+  /* background : linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,1 ) ); */
+}
+.continue-reading{
+  position: absolute;
+  text-align: left;
+  font-weight: 400;
+  font-size: 11px;
+  height: min-content;
+  background-color: white;
+  bottom: 0px;
+  align-self: bottom;
+  justify-self: left;
+  padding: 10px 20px 20px 20px;
+  color: rgb(0, 0, 0, 0.4);
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+}
 .markdown-container{
   display  : grid;
   position: relative;
@@ -111,8 +164,7 @@ export default{
 #markdown{
   display: grid;
   font-size: 1.1em;
-  width: 80%;
-  max-width: 680px;
+  width: 100%;
   overflow-x : hidden;
   justify-self: center;
   font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
@@ -121,7 +173,7 @@ export default{
   line-height: 32px;
 }
 #markdown{
-  padding: 5px !important;
+  padding: 0px 20px 0px 20px !important;
   overflow-wrap: break-word;
 }
 
@@ -184,7 +236,7 @@ export default{
 .post-sub-info{
   display: grid;
   width: 100%;
-  grid-template-columns: max-content max-content max-content max-content;
+  grid-template-columns: max-content max-content max-content max-content max-content max-content;
   justify-content: left;
   align-items: center;
   align-content: center;
@@ -211,6 +263,7 @@ export default{
 .post-length{
   color    : #6B6A6A;
   font-size: 13px;
+  width: 100%;
 }
 #markdown h1{
   font-size: 28px;

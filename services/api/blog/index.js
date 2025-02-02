@@ -51,7 +51,7 @@ module.exports = (io) => {
 
   router.post('/updateBlog', async (req, res) => {
     try {
-      const { id, title, subtitle, img, date, author, content, tags } = req.body
+      const { id, title, subtitle, img, date, author, content, tags, length } = req.body
       if (!title || !content) {fail(res)}
       const blog = {
         id       : id,        // title but with hypens
@@ -61,6 +61,7 @@ module.exports = (io) => {
         date     : date,      // UTC seconds since 1970
         author   : author,
         content  : content,   // markdown text
+        length   : length,    // length of read
         tags     : tags || []
       } 
       const result = await index.addDocuments([blog])
@@ -100,7 +101,7 @@ module.exports = (io) => {
       if (!query) {
         return res.status(400).send('Query parameter is required')
       }
-      const searchResults = await index.search(query, {limit: 10 })
+      const searchResults = await index.search(query, {limit: 10, sort: ['date:desc'] })
 
       res.json(searchResults);
     } catch (err) {

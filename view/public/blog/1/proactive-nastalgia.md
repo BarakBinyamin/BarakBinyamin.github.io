@@ -5,6 +5,7 @@ subtitle : >
         Thinking aabout west coast swingas
         dasd
         Would it be cool
+length   : 5 minute read
 img      : /posts/random/rainbow.png
 date     : 1737876335573
 author   : Barak B.
