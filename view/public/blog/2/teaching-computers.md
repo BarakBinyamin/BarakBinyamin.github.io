@@ -13,7 +13,7 @@ Does order matter when learning? Absolutely. The order of subjects gives us cont
 
 If you've never coded before, you've likely heard of the first two. The last, IDE's, are apps that you can write code in that give spelling suggestions for syntax and have buttons to "Run" and "Debug" code. The problem is that all of these spaces are actually difficult for even experienced programmers to produce anything useful with. And though these products claim to be teaching the basic concepts by removing the complexities, they're really adding complexity and creating spaces to gain skills that while transferable, are pretty irrelevant. That can be pretty demoralizing.  
 
-That's why I think the best place to start is either on the command line with python, or in the browser with html. Python is an app that you can download and interact with in text rather than with buttons. You can type commands directly or give it a file to a list of commands called a script. There are communities online that have developed a libraries of scripts that can be combined to perform greater functions, many of which are data processing related, like doing statistics or generating graphs from datasets. 
+That's why I think the best place to start is on the command line with python, or in the browser with html. Python is an app that you can download and interact with in text rather than with buttons. You can type commands directly or give it a file to a list of commands called a script. There are online communities that have developed a libraries of scripts that can be combined to perform greater functions, many of which are data processing related, like doing statistics or generating graphs from datasets. 
 ```python
 # numpy 
 # pandas 
@@ -33,12 +33,12 @@ Arguably one of the most important parts about coding is community. There are co
 ---- 
 Learn about new libraries and tools on github, some coding channels (be careful not to just watch) like firebase, npm for javascript which is part of html and pip for python. There are many more communities for both but those are great places to start!
 
-If you'd like to learn more about coding please consider reaching out to me, following my blogs, or enrolling in my hybrid course I'm expecting to be ready by mid may.
+If you'd like to learn more about coding please consider reaching out to me, following my blogs, or enrolling in my hybrid course mid may 2025.
 
-coding terms that are useful
+<!-- coding terms that are useful
 - variable
 - conditional logic
 - function
 - library/module
 - class
-- event 
+- event  -->

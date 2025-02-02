@@ -61,6 +61,11 @@ html,body{
   color              : black;
   font-size          : 25px;
 }
+@media (pointer: coarse) {
+  a:hover {
+    all: revert-layer;
+  }
+}
 /* #app{
   height: 100%;
 } */
