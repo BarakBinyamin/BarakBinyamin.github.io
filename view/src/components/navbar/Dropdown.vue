@@ -44,7 +44,7 @@ export default {
 
 <style scoped>
 .contianer{
-	z-index               : 20;
+	z-index               : 999;
 	position              : absolute;
 	display               : grid;
 	grid-template-columns : auto;

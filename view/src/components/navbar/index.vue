@@ -95,6 +95,7 @@ export default {
     border-bottom: 1px solid lightgrey;
     margin-left: 10px;
     margin-right: 10px;
+    z-index: 999;
 }
 
 .logo2{
