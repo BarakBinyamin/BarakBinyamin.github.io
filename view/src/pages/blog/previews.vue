@@ -220,7 +220,7 @@
     font-size: 21;
   }
   #markdown p{
-    font-size: 18px;
+    /* font-size: 18px; */
   }
   
   #markdown img{

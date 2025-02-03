@@ -1,9 +1,8 @@
-
 # The code
 Alright your here, here's how everything is structured
 
 # Purpose
-To share, to connect, to inpire, to look back on.
+To share, to connect, to inspire, to look back on.
 
 # Style guide
 fonts 

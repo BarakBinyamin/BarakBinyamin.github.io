@@ -1,6 +1,6 @@
 <template>
 	<transition name="dropdown">
-        <div class="contianer" v-if="show && window.width<600">
+        <div class="container" v-if="show && window.width<600">
             <router-link active-class="selected" class="navigation-link" 
                 :to="`/`">
                 home
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style scoped>
-.contianer{
+.container{
 	z-index               : 999;
 	position              : absolute;
 	display               : grid;

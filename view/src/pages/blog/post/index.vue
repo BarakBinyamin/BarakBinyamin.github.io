@@ -1,6 +1,6 @@
 <template>
     <!-- Smalls -->
-    <div >
+    <div class="blog-container">
         <router-link to="/blog" class="back">← Search</router-link>
         <div class="post-metadata">
           <div lang="de" class="post-title">{{ blog.title }}</div>
@@ -90,7 +90,7 @@
     font-size: 13px;
     font-weight: 400;
     width:100%;
-    padding: 50px 30px 0px 30px;
+    padding: 30px 30px 0px 15px;
     
   }
   .preview-list{
@@ -151,39 +151,6 @@
     color: rgb(0, 0, 0, 0.4);
     font-family: 'Inter', sans-serif;
   
-  }
-  
-  #markdown{
-    display: grid;
-    font-size: 1.1em;
-    width: 100%;
-    /* max-width: 680px; */
-    overflow-x : hidden;
-    justify-self: center;
-    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
-    font-weight: 400;
-    color : #242424;
-    line-height: 32px;
-  }
-  #markdown{
-    padding: 0px 20px 20px 20px !important;
-    overflow-wrap: break-word;
-  }
-  .blog-content{
-    padding: 0;
-    margin: 0;
-    width: 100%;
-  }
-  
-  #markdown h1,#markdown h2, #markdown h3, #markdown h4{
-    margin-top: .5em;
-    margin-bottom: .5em;
-  }
-  
-  #markdown p{
-    margin-top: .5em;
-    margin-bottom: .5em;
-    font-size : 20px !important;
   }
   
   /* Fix sizes */
@@ -263,153 +230,5 @@
     color    : #6B6A6A;
     font-size: 13px;
   }
-  #markdown h1{
-    font-size: 28px;
-  }
-  #markdown h2{
-    font-size: 25px;
-  }
-  #markdown h3{
-    font-size: 23px;
-  }
-  #markdown h4{
-    font-size: 21;
-  }
   
-  #markdown img{
-    margin-top   : 10px;
-    margin-bottom: 10px;
-    object-fit   : contain;
-    width        : 100%;
-  }
-  
-  pre{
-    position: relative;
-    border-radius: 5px;
-    overflow-x: scroll;
-    margin: 20px 20px 20px 20px !important;
-    padding: 1em !important;
-    font-size: .5em !important;
-    width: 100%;
-    max-width: 500px;
-    justify-self: center;
-  }
-  
-  @media (any-pointer: coarse)  {
-    pre{
-      position: relative;
-      border-radius: 5px;
-      overflow-x: scroll;
-      margin: 10px 10px 10px 10px !important;
-      padding: 1em !important;
-      font-size: .5em !important;
-    }
-  }
-  
-  pre .language-html{
-    width : 100%;
-    margin:0;
-    position: relative;
-  }
-  code{
-    height: min-content !important;
-    padding: 0px !important;
-    margin: 0px !important;
-    font-size: 10px;
-  }
-  /* copy div is next to code div */
-  .copy{
-    position: sticky;
-    top: 0px;
-    left: calc(100% - 35px);
-    display: block;
-    width: 35px;
-    height: 35px;
-    background-color: rgba(60,60,60);
-    border-radius: 5px;
-    opacity: .8;
-    border: 1px rgba(60,60,60,0) solid;
-  }
-  
-  .copy:hover{
-    display: block;
-    opacity: .6;
-    border: 1px white solid;
-  }
-  
-  .added{
-    background: green;
-    float:right;
-  }
-  
-  .checkmark__circle {
-    stroke-dasharray: 166;
-    stroke-dashoffset: 166;
-    stroke-width: 2;
-    stroke-miterlimit: 10;
-    stroke: #7ac142;
-    fill: none;
-    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-  }
-  
-  .checkmark {
-    z-index:5;
-    position:absolute;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    display: block;
-    stroke-width: 2;
-    stroke: #fff;
-    stroke-miterlimit: 10;
-    box-shadow: inset 0px 0px 0px #7ac142;
-    animation: fill .2s ease-in-out .2s forwards, scale .15s ease-in-out .45s both;
-    opacity: .8;
-  }
-  
-  .checkmark__check {
-    transform-origin: 50% 50%;
-    stroke-dasharray: 48;
-    stroke-dashoffset: 48;
-    animation: stroke 0.15s cubic-bezier(0.65, 0, 0.45, 1) 0.4s forwards;
-  }
-  
-  @keyframes stroke {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-  @keyframes scale {
-    0%, 100% {
-      transform: none;
-    }
-    50% {
-      transform: scale3d(1.1, 1.1, 1);
-    }
-  }
-  @keyframes fill {
-    100% {
-      box-shadow: inset 0px 0px 0px 30px #7ac142;
-    }
-  }
-  
-  li,ul,li::marker{
-    margin: 0px !important;
-    margin: 0px !important;
-    padding: 0px !important;
-    margin: 0px !important;
-    list-style-position: outside;
-  }
-  
-  li{
-    margin-left: 25px !important;
-  }
-  
-  </style>
-  
-
-
-
-
-
-
+</style>

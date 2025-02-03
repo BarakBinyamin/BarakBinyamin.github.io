@@ -3,6 +3,7 @@ import App           from './App.vue'
 import clickOutside  from "./directives/click-outside.js"
 import router        from './pages'
 import Lenis         from 'lenis'
+import "./assets/blog.css"
 
 const app = createApp(App)
 app.use(router         )

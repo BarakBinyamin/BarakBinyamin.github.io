@@ -101,6 +101,7 @@ export default{
 .preview-tile{
   max-height: 300px;
   max-width: 600px;
+  width:100%;
   overflow: hidden;
   position: relative;
   /* box-shadow: 0 1px 8px 0 rgba(0, 0, 0, .2); */
@@ -163,7 +164,6 @@ export default{
 
 #markdown{
   display: grid;
-  font-size: 1.1em;
   width: 100%;
   overflow-x : hidden;
   justify-self: center;
@@ -276,9 +276,6 @@ export default{
 }
 #markdown h4{
   font-size: 21;
-}
-#markdown p{
-  font-size: 18px;
 }
 
 #markdown img{

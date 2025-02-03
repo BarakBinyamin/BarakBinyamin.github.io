@@ -65,11 +65,10 @@
 
 <script>
 import SubscribeModal from '../../components/subscribe-modal.vue';
-import markdown from '../blog/viewMarkdown.vue'
 import API from '../../assets/api.js'
 
 export default{
-  components : { SubscribeModal, markdown },
+  components : { SubscribeModal },
   methods    : {
     openModal(){
       this.$refs.subscribeModal.openModal()
