@@ -115,7 +115,6 @@ export default{
 } */
 .post-metadata{
   margin: 0;
-  padding: 20px 20px 0px 20px;
   width: 100%;
   overflow: hidden;
   width: 100%;
