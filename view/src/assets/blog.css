@@ -10,6 +10,9 @@
     padding: 0px 24px 24px 15px;
     width: 100%;
     align-content: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .blog-content{
