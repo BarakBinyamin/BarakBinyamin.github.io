@@ -90,7 +90,7 @@
     font-size: 13px;
     font-weight: 400;
     width:100%;
-    padding: 30px 30px 0px 15px;
+    padding: 30px 0px 15px 0px;
     
   }
   .preview-list{
