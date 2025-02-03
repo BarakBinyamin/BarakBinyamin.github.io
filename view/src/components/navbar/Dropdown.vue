@@ -1,6 +1,6 @@
 <template>
 	<transition name="dropdown">
-        <div class="container" v-if="show && window.width<600">
+        <div class="dropdown-container" v-if="show && window.width<600">
             <router-link active-class="selected" class="navigation-link" 
                 :to="`/`">
                 home
@@ -32,6 +32,7 @@ export default {
     created() {
         window.addEventListener('resize', this.handleResize);
         this.handleResize();
+        console.log(this.links)
     },
     methods: {
         handleResize() {
@@ -43,8 +44,8 @@ export default {
 </script>
 
 <style scoped>
-.container{
-	z-index               : 999;
+.dropdown-container{
+	z-index               : 2;
 	position              : absolute;
 	display               : grid;
 	grid-template-columns : auto;
@@ -60,8 +61,7 @@ export default {
     transform-origin: top;
     background-color: white;
     left:0;
-    padding-top: 50px
-
+    padding-top: 50px;
 }
 .dropdown-enter-active,
 .dropdown-leave-active {

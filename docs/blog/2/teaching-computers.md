@@ -2,18 +2,20 @@
 title    : Teaching Computers
 id       : teaching-computers
 subtitle : >
-        A new approach to discussing programming and computers in todays world 
+        A new approach to introducing programming to newcomers
 length   : 5 minute read
 img      : 
 date     : 1738472008966
 author   : Barak B.
 ---
 
-Does order matter when learning? Absolutely. The order of what we learn gives us context and perspective, which carry far too much weight throughout our entire exploration of various subjects. I have studied computer engineering and mathematics for the past 6 years, and I can say that many lessons obfuscated key concepts, and made it difficult to grasp the essentials. My biggest qualms in the introductions to coding are with puzzle with Scratch, Java, or the choice of an integrated development environment (IDE).
+Does order matter when learning? Absolutely. The order of what we learn gives us the context and perspective that sticks with us throughout our entire exploration of various subjects. I have studied computer engineering and mathematics for the past 6 years, and I can say that many lessons obfuscated key concepts, and made it difficult to grasp the essentials. My biggest qualms in the introductions to coding are with Scratch, Java, or the choice of an integrated development environment (IDE).
 
 If you've never coded before, you've likely heard of the first two. The last, an IDE, is an app that you can write code in. It gives spelling suggestions for syntax, and has buttons to "Run" and "Debug" a program. The problem is that all of these spaces are actually difficult for even experienced programmers to produce anything useful with. And though these products claim to be teaching the basic concepts by removing the complexities, they're really adding complexity, obscuring how programs are ran, and creating spaces to gain skills that while transferable, are pretty irrelevant. That can be pretty demoralizing.  
 
-That's why I think the best place to start is on the command line with python, or in the browser with html. Python is an app that you can download and interact with in text rather than with buttons. You can type commands directly or give a file to a list of commands called a script. There are online communities that have developed libraries of scripts that can be combined to perform greater functions. Many of these libraries for data processing, like doing statistics or generating graphs from datasets. 
+That's why I think the best place to start is on the command line with python, or in the browser with html.
+
+Python is an app that you can download and interact with in text rather than with buttons. You can type commands directly or give a file to a list of commands called a script. There are online communities that have developed libraries of scripts that can be combined to perform greater functions. Many of these libraries are for data processing, like doing statistics or generating graphs from datasets. 
 ```python
 # numpy 
 # pandas 
