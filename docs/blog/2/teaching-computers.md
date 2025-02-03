@@ -2,7 +2,7 @@
 title    : Teaching Computers
 id       : teaching-computers
 subtitle : >
-        A new approach to introducing programming to newcomers
+        Introducing programming to newcomers
 length   : 5 minute read
 img      : 
 date     : 1738472008966

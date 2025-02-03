@@ -15,6 +15,12 @@
     user-select: none; /* Standard syntax */
 }
 
+.blog-container:focus, .blog-container:active {
+    outline: none; /* Removes focus ring */
+    text-decoration: none; /* Removes underline */
+}
+  
+
 .blog-content{
     display: grid;
     width: 100%;

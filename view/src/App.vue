@@ -34,6 +34,8 @@ export default {
 <style>
 /* Defaults & style */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 /* https://stackoverflow.com/questions/5102820/scrolling-of-whole-page-instead-of-inner-div-only */
