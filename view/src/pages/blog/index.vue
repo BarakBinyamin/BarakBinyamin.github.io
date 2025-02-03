@@ -103,7 +103,7 @@ export default{
 }
 .preview-tile{
   max-height: 300px;
-  max-width: 600px;
+  max-width: 600px; 
   width:100%;
   overflow: hidden;
   position: relative;
@@ -111,11 +111,15 @@ export default{
   padding-bottom: 100px;
   border-bottom: 1px solid rgba(0,0,0,.1);
 }
-/* .preview-tile:hover{
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .4);
-  transition: box-shadow .2s;
+.preview-tile:hover{
+  width:100%;
+  max-height: 300px;
   opacity: 1;
-} */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  text-decoration: none;
+}
 .post-metadata{
   margin: 0;
   width: 100%;
