@@ -113,7 +113,6 @@
     opacity: 1;
   }
   .post-metadata{
-    padding: 10px;
     width: 100%;
     overflow: hidden;
     width: 100%;
