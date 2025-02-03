@@ -108,7 +108,7 @@ export default{
   overflow: hidden;
   position: relative;
   /* box-shadow: 0 1px 8px 0 rgba(0, 0, 0, .2); */
-  padding-bottom: 100px;
+  /* padding-bottom: 100px; */
   border-bottom: 1px solid rgba(0,0,0,.1);
 }
 .preview-tile:hover{
