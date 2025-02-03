@@ -45,7 +45,7 @@ export default {
 
 <style scoped>
 .dropdown-container{
-	z-index               : 2;
+	z-index               : 99;
 	position              : absolute;
 	display               : grid;
 	grid-template-columns : auto;
