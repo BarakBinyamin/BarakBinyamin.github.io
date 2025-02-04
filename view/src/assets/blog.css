@@ -33,6 +33,11 @@
     -webkit-font-smoothing: antialiased;
 }
 
+.blog-content li,ul {
+    font-family: inherit;
+    font-size: 20px;
+}
+
 /*
 .blog-container{
     position: relative;
