@@ -15,22 +15,28 @@
           </div>
         </div>
         <!-- <div id="markdown" class="blog-content" v-html='render(blog.content)'></div> -->
-        <VueShowdown id="markdown" class="blog-content" 
+        <!-- <VueShowdown id="markdown" class="blog-content" 
           :markdown="blog.content"
           flavor="github"
           :options="{ emoji: true, tasklists:true, tablesHeaderId: true, openLinksInNewWindow: true, extensions: [] }"
-        />
+        /> -->
+        <foo id="markdown" class="blog-content" 
+          :markdown="blog.content"
+          flavor="github"
+          :options="{ emoji: true, tasklists:true, tablesHeaderId: true, openLinksInNewWindow: true}"/>
     </div>
   </template>
   
   <script>
-  import Prism    from "prismjs"
-  import "prismjs/themes/prism-tomorrow.css"
+  // import Prism    from "prismjs"
+  // import "prismjs/themes/prism-tomorrow.css"
   import moment from 'moment'
   import API from '../../../assets/api.js'
   // import showdown from "showdown"
-  
+  import foo from "../markdown.vue" 
+
   export default{
+     components: {foo},
      props: ['id'],
      data(){
         return {

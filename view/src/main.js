@@ -3,8 +3,9 @@ import App           from './App.vue'
 import clickOutside  from "./directives/click-outside.js"
 import router        from './pages'
 import Lenis         from 'lenis'
-import { VueShowdownPlugin } from 'vue-showdown'
+import { VueShowdownPlugin, showdown} from 'vue-showdown'
 import "./assets/blog.css"
+import { extensions } from 'showdown'
 
 const app = createApp(App)
 app.use(router         )
@@ -15,11 +16,29 @@ const lenis = new Lenis({scrollSpeed:2});
 function raf(time) {lenis.raf(time);requestAnimationFrame(raf);}
 requestAnimationFrame(raf);
 
+var demo = function(converter) {
+  return [
+      {
+          type    : 'output', 
+          regex   : '<code class=(.*) \/>', 
+          replace : '<code data-prismjs-copy class=$1>'
+      }
+  ];
+}
+showdown.extension('addStickers', () => {
+  console.log('her2222')
+  return [
+  {
+    type    : 'output', 
+    regex   : /\<code (.*)\>/g, 
+    replace : "<code $1>" //data-prismjs-copy='✂'
+  }
+]})
 app.use(VueShowdownPlugin, {
-    flavor: 'github',
     options: {
       emoji: false,
-    },
+      flavor: 'github'
+    }
 })
 
 app.mount('#app')
