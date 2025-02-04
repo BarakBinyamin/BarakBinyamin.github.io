@@ -3,6 +3,7 @@ import App           from './App.vue'
 import clickOutside  from "./directives/click-outside.js"
 import router        from './pages'
 import Lenis         from 'lenis'
+import { VueShowdownPlugin } from 'vue-showdown'
 import "./assets/blog.css"
 
 const app = createApp(App)
@@ -13,5 +14,12 @@ app.use(clickOutside   )
 const lenis = new Lenis({scrollSpeed:2});
 function raf(time) {lenis.raf(time);requestAnimationFrame(raf);}
 requestAnimationFrame(raf);
+
+app.use(VueShowdownPlugin, {
+    flavor: 'github',
+    options: {
+      emoji: false,
+    },
+})
 
 app.mount('#app')
