@@ -1,5 +1,5 @@
 # My Website
-My name is Barak Binyamin, I like to share and craft cool stuff with cool people
+My name is Barak Binyamin, I like to share and I like craft with good people
 
 Coming soon... subscribe to the blogs
 
