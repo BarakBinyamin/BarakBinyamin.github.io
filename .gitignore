@@ -18,6 +18,7 @@ package-lock.json
 
 # secret keys
 .env
+*.pem
 
 # data
 services/database/data.ms 
