@@ -12,7 +12,7 @@ app.use(router         )
 app.use(clickOutside   )
 
 // Initialize Lenis - Nice Scrolling
-const lenis = new Lenis({scrollSpeed:2});
+const lenis = new Lenis({scrollSpeed:99});
 function raf(time) {lenis.raf(time);requestAnimationFrame(raf);}
 requestAnimationFrame(raf);
 
@@ -26,7 +26,6 @@ var demo = function(converter) {
   ];
 }
 showdown.extension('addStickers', () => {
-  console.log('her2222')
   return [
   {
     type    : 'output', 
