@@ -5,6 +5,7 @@ import router        from './pages'
 import Lenis         from 'lenis'
 import { VueShowdownPlugin, showdown} from 'vue-showdown'
 import "./assets/blog.css"
+import { extensions } from 'showdown'
 
 const app = createApp(App)
 app.use(router         )

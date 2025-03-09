@@ -39,7 +39,7 @@ import Dropdown from "./Dropdown.vue"
 import MenuButton from "./MenuButton.vue"
 
 // B.B search album blog store contact
-const LinksRight=[ "album", "blog", "table", "store", "contact"]
+const LinksRight=[ "blog", "table", "store", "contact"]
 export default {
     name: 'navbar',
     props : ['links'],
@@ -167,7 +167,7 @@ export default {
 
 .navbar-full-layout{
     display: grid;
-    grid-template-columns: 250px auto  min-content min-content min-content min-content;
+    grid-template-columns: 250px auto  min-content min-content min-content min-content min-content;
     grid-gap: 10px;
     height: 60px;
     overflow: hidden;

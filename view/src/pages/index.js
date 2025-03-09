@@ -6,6 +6,7 @@ import Contact from  '../pages/contact/index.vue'
 import Album from  '../pages/album/index.vue'
 import Blog from  '../pages/blog/index.vue'
 import Post from  '../pages/blog/post/index.vue'
+import Table from  '../pages/table/index.vue'
 
 // import Store from  '../pages/posts/index.vue'
 
@@ -42,6 +43,11 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: Contact,
+  },
+  {  
+    path: '/table',
+    name: 'table',
+    component: Table,
   },
   { 
     path: '/:pathMatch(.*)*',

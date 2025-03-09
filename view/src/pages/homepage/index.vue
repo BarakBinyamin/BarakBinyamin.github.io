@@ -2,6 +2,7 @@
   <div>
     <div class="welcome-container-container">
       <div class="welcome-container">
+        <img class="main-avatar-image" src="/site-images/avatar4.png">
         <div class="socials" >
           <!-- faceebook -->
           <a class="link" target="_blank" href="https://www.facebook.com/barak.binyamin.7/">
@@ -28,9 +29,10 @@
             <svg viewBox="0 0 1024 1024"             height="30px" width="30px" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#848484"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512 599.6L107.9 311.1v19.7L512 619.3l404.1-288.6V311L512 599.6z" fill="#848484"></path><path d="M63.9 187v650h896.2V187H63.9z m852.2 598.5L672.2 611.3l-13.8 9.8L899.1 793H125.5l240.6-171.8-13.8-9.8-244.4 174.5V231h808.2v554.5z" fill="#848484"></path><path d="M512.9 536.7m-10 0a10 10 0 1 0 20 0 10 10 0 1 0-20 0Z" fill="#848484"></path></g></svg>
           </a>
         </div>
-          <div class="welcome">Hey there 👋, I'm Barak, a passionate creative in Boston. When I'm not at work, you can usually find me rock climbing, dancing west coast swing, and stiching together side projects in a coffee shop.
+
+          <div class="welcome">Hey there 👋, I'm Barak, just another dude in Boston. When I'm not at work, you can usually find me rock climbing, dancing west coast swing, or stiching together side projects in a coffee shop.
           Thanks for checking out my website, I enjoy meeting new people so don't hesitate to <a class="link" href="/contact">reach out</a>!  
-          <br><br><a class="subscribe-button" @click="openModal">Subscribe</a> to my blog posts for high quality banter, and don't forget to check out the store for merch, tech stuff, and custom spice packs
+          <br><br><a class="subscribe-button" @click="openModal">Subscribe</a> to my <a class="link" href="/blog">blog</a> posts for high quality banter, check out <a class="link" href="/table">the table</a> for misc ideas, and don't forget to stop by the store for merch, tech stuff, and custom spice packs
         </div>
       </div>
     </div>
@@ -131,6 +133,16 @@ export default{
 </script>
 
 <style scoped>
+  .main-avatar-image{
+    width           : 260px;
+    border-radius   : 25px;
+    justify-self    : center;
+    align-self      : center;
+    padding         : 10px;
+    overflow        : hidden;
+    margin-bottom   : 12px;
+    /* background-color: blue; */
+  }
   .welcome-container-container{
     display: grid;
     width: 100%;
@@ -140,9 +152,9 @@ export default{
     height : max-content;
     display: grid;
     padding: 10px;
-    grid-template-columns: 50px calc(100% - 50px);
+    grid-template: [column-name1] 50px [column-name2] 200px [column-name3] calc(100% - 250px);
     align-content: center;
-    max-width: 700px;
+    max-width: 800px;
   }
 
   .welcome{
@@ -154,7 +166,7 @@ export default{
     font-size: 15px;
     line-height: 22px;
     text-align: left;
-    background-color: #f3f3f3;
+    /* background-color: #f3f3f3; */
     border-radius: 5px;
     align-content: center;
     color: #333333;
@@ -166,11 +178,12 @@ export default{
     margin:0;
     width : 100%;
     display: grid;
-    /* grid-template-rows: 30px; */
-    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, 30px);
+    grid-gap: 20px;
     align-items: center;
-    /* align-content: center; */
+    align-content: center;
     justify-content: center;
+    justify-items: center;
     /* background-color: blue; */
   }
 
@@ -220,5 +233,17 @@ export default{
   cursor: pointer;
   transition: color .8s;
   color: purple;
+}
+
+@media (max-width: 800px) {
+  .welcome-container{
+    height : max-content;
+    display: grid;
+    padding: 10px;
+    grid-template: [line-name] 50px  [line-name2] 200px 
+                   [line-name3] 100%;
+    align-content: center;
+    max-width: 800px;
+  }
 }
   </style>

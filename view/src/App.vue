@@ -76,14 +76,14 @@ a{
   text-decoration: none;
 }
 a:hover{
-  cursor: crosshair;
+  cursor: pointer;
   opacity: .6;
 }
 .link{
   color: purple;
 }
 .link:hover{
-  cursor: crosshair;
+  cursor: pointer;
   opacity: .6;
 }
 .icon-link:hover{

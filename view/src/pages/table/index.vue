@@ -6,6 +6,8 @@
         <!-- Items     -->
         <!-- Dev Tools -->
         <!-- Movies    -->
-         
     </div>
 </template>
+
+<style scoped>
+</style>
