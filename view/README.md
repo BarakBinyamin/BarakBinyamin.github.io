@@ -31,6 +31,11 @@ colors
 # more ideas
 - all my social medias
 - movies, books, spotify
+- the table
+- analytics server/database
 
+# References
+- [How to make an image grid](https://www.w3schools.com/howto/howto_js_image_grid.asp)
+  
 # tools
 - [SVG Repo](https://www.svgrepo.com/)

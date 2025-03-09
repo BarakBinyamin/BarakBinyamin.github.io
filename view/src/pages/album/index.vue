@@ -56,8 +56,7 @@
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
-  padding: 0 4px;
-  padding: 10px 10px 100px 10px;
+  padding: 10px 20px 100px 10px;
 }
 
 /* Create four equal columns that sits next to each other */
@@ -65,11 +64,11 @@
   -ms-flex: 25%; /* IE10 */
   flex: 25%;
   max-width: 25%;
-  padding: 0 4px;
+  padding: 10px  10px;
 }
 
 .column img {
-  margin-top: 8px;
+  margin-top: 20px;
   vertical-align: middle;
   width: 100%;
 }

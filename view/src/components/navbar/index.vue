@@ -39,7 +39,7 @@ import Dropdown from "./Dropdown.vue"
 import MenuButton from "./MenuButton.vue"
 
 // B.B search album blog store contact
-const LinksRight=[ "album", "blog", "store", "contact"]
+const LinksRight=[ "album", "blog", "table", "store", "contact"]
 export default {
     name: 'navbar',
     props : ['links'],
