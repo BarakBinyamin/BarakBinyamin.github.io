@@ -37,6 +37,10 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-rendering          : optimizeLegibility;
+  -webkit-font-smoothin   : antialiased;
+  -moz-osx-font-smoothing : grayscale;
+  font-kerning            : auto;
 }
 /* https://stackoverflow.com/questions/5102820/scrolling-of-whole-page-instead-of-inner-div-only */
 /* html, body { height: 100%; }  */

@@ -36,8 +36,8 @@
         </div> -->
         <div class="welcome">Hey there 👋, I'm Barak, just another dude in Boston. When I'm not at work, you can usually find me rock climbing, dancing west coast swing, or stiching together side projects in a coffee shop.
           Thanks for checking out my website, I enjoy meeting new people so don't hesitate to <a class="link" href="/contact">reach out</a>!  
-          <br><br>Follow my <a class="link" href="/blog">blog</a> posts for high quality banter, check out <a class="link" href="/table">the table</a> for misc ideas, and don't forget to stop by the <a class="link" href="/store">store</a> for merch, tech stuff, and custom spice packs
-          <br><br>Also reach out if you could use a free portfolio, or you'd like to learn more about how to code. I tutor CS/CE/SWEN and I'm developing a coarse that could use some feedback!
+          <br><br>Follow my <a class="link" href="/blog">blog</a> posts for high quality banter, check out <a class="link" href="/table">the table</a> for misc ideas, and don't forget to stop by the <a class="link" href="/store">store</a>
+          <br><br>Also reach out if you could use a free portfolio, or you'd like to learn more about how to code. I tutor CS/CE/SWEN and I'm developing a course that could use some feedback!
         </div>
       </div>
     </div>

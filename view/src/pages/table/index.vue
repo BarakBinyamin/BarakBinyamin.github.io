@@ -1,6 +1,9 @@
 <template>
     <div>
-        <div class="title">Half b🍞ked ideas and some of my favorite things </div>
+        <div class="title">Half b🍞ked ideas, definitely ask me about them</div>
+        <div class="items">
+            <div v-for="item in items" class="item">{{item}}</div>
+        </div>
         <!-- Location by Place -->
             <!-- Albany -->
         <!-- Items     -->
@@ -13,10 +16,34 @@
             <!-- Knowledge navigate different cities and do taxes, and manage wealth -->
     </div>
 </template>
-
+<script>
+export default{
+    data(){
+        return {
+            items : [
+                "Socialized food", "Simple Engineering" , "Midnight Cafe", 
+                "Proactive Nostalgia", "Socialized Insurance", "Local politics"   
+            ]
+        }
+    }
+}
+</script>
 <style scoped>
 .title{
-    padding-top: 20px;
+    font-size: 18px;
+    padding: 18px 10px 10px 10px;
     text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: .3px;
+}
+.items{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: .3px;
+    padding: 10px;
+}
+.item{
+    padding: 5px;
+    text-transform: capitalize;
 }
 </style>
