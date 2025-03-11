@@ -178,6 +178,21 @@ export default{
     filter: grayscale(0%);
   }
 }
+.main-avatar-image-container{
+    display         : block;
+    width           : 260px;
+    height           :260px;
+    border-radius   : 25px;
+    justify-self    : center;
+    align-self      : center;
+    overflow        : hidden;
+    position: relative;
+    /* border: 3px solid white;  */
+    animation-delay: 4s;
+    animation: example 1s ease;
+    animation: blur 1s steps(5, end);
+    /* background-color: blue; */
+  }
   .main-avatar-image{
     display         : block;
     width           : 260px;
