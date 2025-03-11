@@ -35,7 +35,7 @@
           <br><br><a class="subscribe-button" @click="openModal">Subscribe</a> to my <a class="link" href="/blog">blog</a> posts for high quality banter, check out <a class="link" href="/table">the table</a> for misc ideas, and don't forget to stop by the store for merch, tech stuff, and custom spice packs
         </div> -->
         <div class="welcome">Hey there 👋, I'm Barak, just another dude in Boston. When I'm not at work, you can usually find me rock climbing, dancing west coast swing, or stiching together side projects in a coffee shop.
-          Thanks for checking out my website, I enjoy meeting new people so don't hesitate to <a class="link" href="/contact">reach out</a>!  
+          Thanks for checking out my website, I enjoy meeting new people so don't hesitate to <a class="link" target="_blank" href="https://ig.me/m/barak_binyamin">reach out</a>!  
           <br><br>Follow my <a class="link" href="/blog">blog</a> posts for high quality banter, check out <a class="link" href="/table">the table</a> for misc ideas, and don't forget to stop by the <a class="link" href="/store">store</a>
           <br><br>Also reach out if you could use a free portfolio, or you'd like to learn more about how to code. I tutor CS/CE/SWEN and I'm developing a course that could use some feedback!
         </div>
