@@ -2,7 +2,10 @@
   <div>
     <div class="welcome-container-container">
       <div class="welcome-container">
-        <img class="main-avatar-image" src="/site-images/avatar4.png">
+        <div class="main-avatar-image-container">
+          <img class="main-avatar-image" :src="image.path" v-show="image.loaded" v-loadedifcomplete="image"
+          @load="image.loaded = true" >
+        </div>
         <div class="socials" >
           <!-- faceebook -->
           <a class="link icon" target="_blank" href="https://www.facebook.com/barak.binyamin.7/">
@@ -80,9 +83,22 @@ export default{
   methods    : {
     openModal(){
       this.$refs.subscribeModal.openModal()
+    },
+    directives: {
+      loadedifcomplete: function(el, binding) {
+        if (el.complete) {
+          binding.value.loaded = true;
+        }
+      }
     }
   },
   async created(){
+    console.log('')
+    await new Promise(res=>setTimeout(res,300))
+    this.image={
+        loaded : false,
+        path   : "/site-images/avatar4.png"
+    }
     // const res  = await fetch("/posts/a1/proactive-nastalgia.md")
     // const text = await res.text()
     // const yamlMatch = text.match(/^---\n([\s\S]*?)\n---\n/)
@@ -91,14 +107,15 @@ export default{
     // const content   = text.replace(/^---\n([\s\S]*?)\n---\n/,"")
     // this.meta = meta
     // this.post = content
-    let results = await API.searchBlog(" ")
-    console.log('here')
-    console.log(results)
-    this.meta = results['hits'][0]
-    this.post = results['hits'][0].content
+    // let results = await API.searchBlog(" ")
+    // console.log('here')
+    // console.log(results)
+    // this.meta = results['hits'][0]
+    // this.post = results['hits'][0].content
   },
   data(){
     return {
+      image: false,
       meta: "",
       post: "",
       communities : [ 
@@ -139,14 +156,43 @@ export default{
 </script>
 
 <style scoped>
+@keyframes example {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes blur {
+  0% {
+    filter: grayscale(80%) blur(.2rem);
+  }
+  25% {
+    filter: blur(.1rem) sepia(40%) grayscale(30%);
+  }
+  50% {
+    filter: blur(0) grayscale(30%) sepia(10%);
+  }
+  100% {
+    filter: grayscale(0%);
+  }
+}
   .main-avatar-image{
+    display         : block;
     width           : 260px;
+    height           : 260px;
     border-radius   : 25px;
     justify-self    : center;
     align-self      : center;
     padding         : 10px;
     overflow        : hidden;
     margin-bottom   : 12px;
+    position: relative;
+    /* border: 3px solid white;  */
+    animation-delay: 4s;
+    animation: example 1s ease;
+    animation: blur 1s steps(5, end);
     /* background-color: blue; */
   }
   .welcome-container-container{
