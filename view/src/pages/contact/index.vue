@@ -1,5 +1,6 @@
 <template>
     <div class="container me">
+        <div class="title">My Socials</div>
         <div class="socials" >
             <!-- <div style="text-align:center;padding:10px;font-size:19px;font-weight: 200">SoCiAL MEdia 👇</div> -->
             <!-- faceebook -->
@@ -35,6 +36,12 @@
 </template>
 
 <style scoped>
+    .title{
+        font-size: 20px;
+        text-align: center;
+        padding: 15px 0px 15px 0px;
+        letter-spacing: 1.5px;
+    }
   .socials{
     width : 100%;
     display: grid;

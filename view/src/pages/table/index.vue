@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="title">Half b🍞ked ideas, definitely ask me about them</div>
+        <div class="title">Half baked ideas that would be fun to discuss</div>
         <div class="items">
             <div v-for="item in items" class="item">{{item}}</div>
         </div>
@@ -30,7 +30,7 @@ export default{
 </script>
 <style scoped>
 .title{
-    font-size: 18px;
+    font-size: 16px;
     padding: 18px 10px 10px 10px;
     text-align: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
