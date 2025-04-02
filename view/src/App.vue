@@ -130,5 +130,9 @@ img {
 router-view{
   position: absolute;
 }
-
+.page-title{
+    text-align: center;
+    padding-top: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
+    <div class="page-title">📷 My Socials 📷</div>
     <div class="container me">
-        <div class="title">My Socials</div>
         <div class="socials" >
             <!-- <div style="text-align:center;padding:10px;font-size:19px;font-weight: 200">SoCiAL MEdia 👇</div> -->
             <!-- faceebook -->
@@ -81,5 +81,9 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+  }
+  .space{
+    height: 5px;
+    display: block;
   }
 </style>

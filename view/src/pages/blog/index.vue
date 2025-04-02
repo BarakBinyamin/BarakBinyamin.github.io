@@ -1,5 +1,6 @@
 <template>
   <!-- Smalls -->
+  <div class="page-title"> 📖 The Blog  📖</div>
   <div class="preview-list blog-container">
     <router-link :to="'/blog/'+blog.id" v-for="blog in blogs" class="preview-tile">
       <div class="post-metadata">
@@ -249,5 +250,9 @@ export default{
   width: 100%;
 }
 
-
+.page-title{
+    text-align: center;
+    padding-top: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
 </style>

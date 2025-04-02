@@ -1,4 +1,5 @@
 <template>
+    <div class="page-title"> 💡 The Table 💡 </div>
     <div>
         <div class="title">Half baked ideas that would be fun to discuss</div>
         <div class="items">
@@ -41,6 +42,7 @@ export default{
     font-size: 15px;
     letter-spacing: .3px;
     padding: 10px;
+    text-align: center;
 }
 .item{
     padding: 5px;
