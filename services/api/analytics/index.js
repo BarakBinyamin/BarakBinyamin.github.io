@@ -1,5 +1,5 @@
 const express         = require('express')
-const rateLimit       = require('express-rate-limit')
+// const rateLimit       = require('express-rate-limit')
 const router          = express.Router()
 
 // const { MeiliSearch } = require('meilisearch')
@@ -50,6 +50,7 @@ module.exports = () => {
     })
   })
   router.get('/', async (req, res) => {
+    console.log('here')
     success(res)
   })
   router.post('/*', async (req, res) => {
