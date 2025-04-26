@@ -23,6 +23,7 @@ const router          = express.Router()
 const views = {}
 
 function fail(res,err){
+  console.log(err)
   res.send({"success":false, "error":err})
 }
 function success(res){
