@@ -8,7 +8,7 @@ import Blog from  '../pages/blog/index.vue'
 import Post from  '../pages/blog/post/index.vue'
 import Table from  '../pages/table/index.vue'
 import Store from  '../pages/store/index.vue'
-import API   from '../assets/blogapi.js'
+import API   from '../assets/analyticsapi.js'
 
 // import Store from  '../pages/posts/index.vue'
 
@@ -74,7 +74,12 @@ router.beforeEach(async (to, from, next) => {
   //   const title = to.matched.at(-1).components.default.title
   //   document.title = title
   // }
-  API.logView(window.location.href).then(foo=>console.log(foo))
+  const nextRoute = window.location.origin + to.fullPath
+  API.logView(nextRoute).then(()=>{
+    API.getViews().then((res)=>{
+      console.log(`${nextRoute} has been hit ${res.views?.[nextRoute]} times`)
+    })
+  })
   next()
 })
 
