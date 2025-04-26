@@ -14,8 +14,8 @@ const router          = express.Router()
 // const index = client.index('blogs')
 
 const limiter = rateLimit({
-    windowMs: 1 * 60 * 1000, // 5 minutes
-    max     : 10,            // max 10 requests per 1 minutes per IP
+    windowMs: 5 * 60 * 1000, // 5 minutes
+    max     : 100,           // max 100 requests per 5 minutes per IP
     message : 'Too many requests, please try again laters'
 })
 router.use(limiter)
