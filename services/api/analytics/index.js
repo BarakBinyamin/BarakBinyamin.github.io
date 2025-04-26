@@ -36,7 +36,8 @@ router.post('/logView', async (req, res) => {
     if (!query) {
       fail(res)
     }else{
-      views[query] = Number(views?.[query]) + 1
+      let currentViews = views?.[query] ? views?.[query] : 0
+      views[query]     = currentViews + 1
       success(res)
     }
   } catch (err) {
