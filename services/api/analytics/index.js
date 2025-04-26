@@ -29,35 +29,32 @@ function success(res){
   res.send({"success":true})
 }
 
-module.exports = () => {
-  router.post('/logView', async (req, res) => { 
-    try {
-      const { query } = req.body
-      if (!query) {
-        fail(res)
-      }else{
-        views[query] = number(views?.[query]) + 1
-        success(res)
-      }
-    } catch (err) {
-      fail(res,err)
+router.post('/logView', async (req, res) => { 
+  try {
+    const { query } = req.body
+    if (!query) {
+      fail(res)
+    }else{
+      views[query] = number(views?.[query]) + 1
+      success(res)
     }
+  } catch (err) {
+    fail(res,err)
+  }
+})
+router.get('/views', async (req, res) => {
+  res.send({
+      "success" : true,
+      "views"   : views
   })
-  router.get('/views', async (req, res) => {
-    res.send({
-        "success" : true,
-        "views"   : views
-    })
-  })
-  router.get('/', async (req, res) => {
-    console.log('here')
-    success(res)
-  })
-  router.post('/*', async (req, res) => {
-    fail(res)
-  })
+})
+router.get('/', async (req, res) => {
+  console.log('here')
+  success(res)
+})
+router.post('/*', async (req, res) => {
+  fail(res)
+})
 
-  return router
-}
-
+module.exports = router
  
