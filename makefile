@@ -24,5 +24,11 @@ publish:
 logs:
 	cd ./services && docker compose logs -f
 
+now:
+	node -e "console.log(Date.now())"
+
+delete:
+	curl -X DELETE "https://rockz.one/blog/deleteBlog/$1"
+
 reboot:
 	source ~/.bashrc && cd services && docker compose down && yes y | docker-del -a && docker compose up -d

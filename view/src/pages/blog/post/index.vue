@@ -31,7 +31,7 @@
   // import Prism    from "prismjs"
   // import "prismjs/themes/prism-tomorrow.css"
   import moment from 'moment'
-  import API from '../../../assets/api.js'
+  import API from '../../../assets/blogapi.js'
   // import showdown from "showdown"
   import foo from "../markdown.vue" 
 

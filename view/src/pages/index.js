@@ -8,6 +8,7 @@ import Blog from  '../pages/blog/index.vue'
 import Post from  '../pages/blog/post/index.vue'
 import Table from  '../pages/table/index.vue'
 import Store from  '../pages/store/index.vue'
+import API   from '../assets/blogapi.js'
 
 // import Store from  '../pages/posts/index.vue'
 
@@ -68,12 +69,13 @@ const router = createRouter({
 });
 
 /* Hacky way to add titles from the matched component properties */
-// router.beforeEach((to, from, next) => {
-//   if (to.matched.at(-1)){
-//     const title = to.matched.at(-1).components.default.title
-//     document.title = title
-//   }
-//   next()
-// })
+router.beforeEach(async (to, from, next) => {
+  // if (to.matched.at(-1)){
+  //   const title = to.matched.at(-1).components.default.title
+  //   document.title = title
+  // }
+  API.logView(window.location.href).then(foo=>console.log(foo))
+  next()
+})
 
 export default router;

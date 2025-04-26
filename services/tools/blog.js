@@ -3,8 +3,9 @@ const yaml = require('js-yaml')
 const { program }    = require('commander')
 
 const BASE_URL = "https://rockz.one/blog/"
-const CREATE   = BASE_URL + "createBlog/"
+// const CREATE   = BASE_URL + "createBlog/"
 const UPDATE   = BASE_URL + "updateBlog/"
+const REMOVE   = BASE_URL + "deleteBlog/"
 
 program
   .requiredOption('--blog  <blog>', 'path to blog')

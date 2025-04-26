@@ -78,7 +78,7 @@
 
 <script>
 import SubscribeModal from '../../components/subscribe-modal.vue';
-import API from '../../assets/api.js'
+import API from '../../assets/blogapi.js'
 
 export default{
   components : { SubscribeModal },

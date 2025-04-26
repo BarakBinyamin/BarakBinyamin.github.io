@@ -47,10 +47,12 @@ api.use(cookieParser())
 
 api.use(dontUseCookies)
 
-const blog        = require('./blog'    )(io) //(io)
-const generic     = require('./generic' )
+const blog        = require('./blog'     )(io)
+const analytics   = require('./analytics')
+const generic     = require('./generic'  )
 
-api.use('/blog',     blog    ) 
-api.use('*',         generic )
+api.use('/blog',     blog         ) 
+api.use('/analytics',analytics    ) 
+api.use('*',         generic      )
 
 server.listen(API_PORT,()=>{console.log(`Launching api on port ${API_PORT}...`)})
