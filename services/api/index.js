@@ -51,6 +51,13 @@ const blog        = require('./blog'     )(io)
 const analytics   = require('./analytics')
 const generic     = require('./generic'  )
 
+   // Global middleware (runs before any routes)
+app.use((req, res, next) => {
+	const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl
+	console.log('hit',fullUrl)
+	next(); // Call next() to pass control to the next middleware or route handler
+});
+
 api.use('/blog',     blog         ) 
 api.use('/analytics',analytics    ) 
 api.use('*',         generic      )
