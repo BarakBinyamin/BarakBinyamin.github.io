@@ -41,7 +41,7 @@ export default {
   -webkit-font-smoothin   : antialiased;
   -moz-osx-font-smoothing : grayscale;
   font-kerning            : auto;
-  /* -webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 /* https://stackoverflow.com/questions/5102820/scrolling-of-whole-page-instead-of-inner-div-only */
 /* html, body { height: 100%; }  */
